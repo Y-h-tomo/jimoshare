@@ -10,21 +10,21 @@ RUN apt-get update && apt-get install -y curl apt-transport-https wget && \
   echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list && \
   apt-get update && apt-get install -y yarn
 
-RUN mkdir /sample-app
-WORKDIR /sample-app
+RUN mkdir /jimoshare
+WORKDIR /jimoshare
 
-ADD Gemfile /sample-app/Gemfile
-ADD Gemfile.lock /sample-app/Gemfile.lock
+ADD Gemfile /jimoshare/Gemfile
+ADD Gemfile.lock /jimoshare/Gemfile.lock
 
 RUN gem install bundler:2.1.4
 RUN bundle install
 
-ADD . /sample-app
+ADD . /jimoshare
 
 # Nginxと通信を行うための準備
 RUN mkdir -p tmp/sockets
-VOLUME /sample-app/public
-VOLUME /sample-app/tmp
+VOLUME /jimoshare/public
+VOLUME /jimoshare/tmp
 
 RUN yarn install --check-files
 RUN SECRET_KEY_BASE=placeholder bundle exec rails assets:precompile

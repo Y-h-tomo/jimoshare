@@ -1,4 +1,4 @@
-version: '3'
+version: "3"
 services:
   web:
     build:
@@ -7,10 +7,10 @@ services:
       - ./environments/db.env
     command: bundle exec puma -C config/puma.rb
     volumes:
-      - .:/sample-app
-      - public-data:/sample-app/public
-      - tmp-data:/sample-app/tmp
-      - log-data:/sample-app/log
+      - .:/jimoshare
+      - public-data:/jimoshare/public
+      - tmp-data:/jimoshare/tmp
+      - log-data:/jimoshare/log
     depends_on:
       - db
   db:
@@ -23,8 +23,8 @@ services:
     build:
       context: containers/nginx
     volumes:
-      - public-data:/sample-app/public
-      - tmp-data:/sample-app/tmp
+      - public-data:/jimoshare/public
+      - tmp-data:/jimoshare/tmp
     ports:
       - 80:80
     depends_on:
