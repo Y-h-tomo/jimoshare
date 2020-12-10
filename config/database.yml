@@ -12,11 +12,11 @@ default: &default
 
 development:
   <<: *default
-  database: sample_app_development
+  database: jimoshare_app_development
 
 test:
   <<: *default
-  database: sample_app_test
+  database: jimoshare_app_test
 
 production:
   <<: *default
