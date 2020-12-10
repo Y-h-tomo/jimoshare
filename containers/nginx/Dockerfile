@@ -2,5 +2,5 @@ FROM nginx
 
 RUN rm -f /etc/nginx/conf.d/*
 
-ADD nginx.conf /etc/nginx/conf.d/sample-app.conf
+ADD nginx.conf /etc/nginx/conf.d/jimoshare-app.conf
 CMD /usr/sbin/nginx -g 'daemon off;' -c /etc/nginx/nginx.conf
