@@ -1,3 +1,7 @@
+# jimoshare の ER 図
+
+![jimoshareのER図](public/jimoshare.png)
+
 # テーブル構成
 
 ## users テーブル
