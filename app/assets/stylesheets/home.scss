@@ -1,14 +1,28 @@
-#top-wrapper {
+.top-wrapper {
+    padding-top: 7vh;
     width: 100vw;
     height: 100vh;
-    margin: 0;
     overflow: hidden;
     background-size: cover;
     background-position: center;
     background-image: url("top.png");
 }
 
-#info-wrapper {
-    width: 100vw;
-    height: 100vh;
+.main-title {
+    font-family: "Comic Sans MS";
+    font-size: 5em;
+}
+
+.card {
+    width: 40em;
+    padding: 1em;
+    margin: 1em;
+}
+
+.info-wrapper {
+    padding: 1em;
+    height: 120vh;
+    overflow: scroll;
+    background-position: center;
+    background: url("jimo_form_bg.png");
 }
