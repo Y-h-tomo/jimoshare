@@ -1,0 +1,73 @@
+= form_with model: @user, url: user_registration_path, class: 'user-form level', local: true do |f|
+  .field
+    .field
+      = render 'shared/error_messages', model:  f.object
+    .field.must-form
+      p.has-text-danger
+        |赤枠は入力必須です
+      .field
+        lavel.has-text-white
+          |ニックネーム
+        .control.has-icons-left.has-icons-right
+          = f.text_area :nickname, class:"input", id:"nickname", placeholder:"ニックネーム", maxlength:"40"
+          span.icon.is-small.is-left
+            i.fas.fa-user-circle
+      .field
+        lavel.has-text-white
+          |Email　(登録用)
+        .control.has-icons-left.has-icons-right
+          = f.email_field :email, class:"input", id:"email",placeholder:"Email（登録用）", autofocus: true
+          span.icon.is-small.is-left
+            i.fas.fa-envelope
+      .field
+        lavel.has-text-white
+          |Password （英数字含む 6文字以上）
+        .control.has-icons-left.has-icons-right
+          = f.password_field :password, class:"input", id:"password", placeholder:"Password （英数字含む 6文字以上)",minlength:"6"
+          span.icon.is-small.is-left
+            i.fas.fa-lock
+      .field
+        lavel.has-text-white
+          |Password (確認用)
+        .control.has-icons-left.has-icons-right
+          = f.password_field :password_confirmation, class:"input", id:"password-confirmation", placeholder:"同じパスワードを入力して下さい",minlength:"6"
+          span.icon.is-small.is-left
+            i.fas.fa-lock
+      .field
+        lavel.has-text-white
+          |電話番号 (ハイフン「ー」無し)
+        .control.has-icons-left.has-icons-right
+          = f.telephone_field :phone_number, class:"input", id:"phone_number", placeholder:"ハイフン無しの番号を入力してください",minlength:"10"
+          span.icon.is-small.is-left
+            i.fas.fa-phone
+      .field
+        .control
+          lavel.has-text-white
+            |エリア
+          span.icon.has-text-white
+            i.fas.fa-map-marked-alt
+          = f.collection_select(:prefecture_id,Prefecture.all, :id, :name, {}, {class:"select", id:"user-prefecture"})
+    .field.either-form
+      p.has-text-info
+        |任意入力です。一部のサービスが行えるようになります。
+      .field
+        lavel.has-text-white
+          |Email (問い合わせ受け付け用)
+        .control.has-icons-left.has-icons-right
+          = f.email_field :contact_email, class:"input", id:"contact_email", placeholder:"Email (問い合わせ受け付け用)"
+          span.icon.is-small.is-left
+            i.fas.fa-paper-plane
+      .field
+        lavel.has-text-white
+          |引き渡し場所(緊急用)
+        .control.has-icons-left.has-icons-right
+          = f.text_field :contact_location, class:"input", id:"password-confirmation", placeholder:"引き渡し場所(緊急用)"
+          span.icon.is-small.is-left
+            i.fas.fa-map-marker-alt
+    .field
+      h2.form-bottom-text.has-text-danger
+        |  「
+        span.fas.fa-user-check
+        |」のボタンを押すことにより、利用規約およびユーザーの登録/変更に同意したものとみなします
+      = button_tag :submit, class:"button is-success is-outlined" do
+        span.fas.fa-user-check

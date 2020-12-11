@@ -1,0 +1,30 @@
+.user-form-wrapper {
+    padding-top: 7vh;
+    height: 120vh;
+    background: url("jimo_form_bg.png");
+}
+
+.form-title {
+    margin: 0 auto;
+}
+
+.must-form {
+    padding: 10px;
+    border: 1px solid red;
+}
+
+.either-form {
+    padding: 10px;
+    border: 1px solid blue;
+}
+
+.user-form {
+    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#user-prefecture {
+    min-width: 20vw;
+}

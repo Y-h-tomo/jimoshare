@@ -37,6 +37,8 @@ GEM
       erubi (~> 1.4)
       rails-dom-testing (~> 2.0)
       rails-html-sanitizer (~> 1.1, >= 1.2.0)
+    active_hash (3.1.0)
+      activesupport (>= 5.0.0)
     activejob (6.0.3.3)
       activesupport (= 6.0.3.3)
       globalid (>= 0.3.6)
@@ -76,6 +78,8 @@ GEM
     diff-lcs (1.4.4)
     erubi (1.9.0)
     ffi (1.13.1)
+    font-awesome-sass (5.15.1)
+      sassc (>= 1.11)
     globalid (0.4.2)
       activesupport (>= 4.2.0)
     hpricot (0.8.6)
@@ -249,10 +253,12 @@ PLATFORMS
   ruby
 
 DEPENDENCIES
+  active_hash
   bootsnap (>= 1.4.2)
   byebug
   database_cleaner
   devise
+  font-awesome-sass
   html2slim
   jbuilder (~> 2.7)
   listen (~> 3.2)
