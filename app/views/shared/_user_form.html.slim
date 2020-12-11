@@ -1,10 +1,10 @@
 = form_with model: @user, url: user_registration_path, class: 'user-form level', local: true do |f|
-  .field
+  .container
     .field
       = render 'shared/error_messages', model:  f.object
     .field.must-form
       p.has-text-danger
-        |赤枠は入力必須です
+        |赤枠部分は入力必須です
       .field
         lavel.has-text-white
           |ニックネーム
@@ -49,7 +49,9 @@
           = f.collection_select(:prefecture_id,Prefecture.all, :id, :name, {}, {class:"select", id:"user-prefecture"})
     .field.either-form
       p.has-text-info
-        |任意入力です。一部のサービスが行えるようになります。
+        |青枠部分は任意入力です
+        br
+        |(一部のサービスが行えるようになります)
       .field
         lavel.has-text-white
           |Email (問い合わせ受け付け用)
@@ -64,10 +66,11 @@
           = f.text_field :contact_location, class:"input", id:"password-confirmation", placeholder:"引き渡し場所(緊急用)"
           span.icon.is-small.is-left
             i.fas.fa-map-marker-alt
-    .field
+    .field.hero
       h2.form-bottom-text.has-text-danger
         |  「
         span.fas.fa-user-check
-        |」のボタンを押すことにより、利用規約およびユーザーの登録/変更に同意したものとみなします
+        | OK 」のボタンを押すことにより、利用規約およびユーザーの登録/変更に同意したものとみなします
       = button_tag :submit, class:"button is-success is-outlined" do
         span.fas.fa-user-check
+        |　OK
