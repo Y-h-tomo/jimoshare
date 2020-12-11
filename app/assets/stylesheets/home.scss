@@ -1,7 +1,7 @@
 .top-wrapper {
     padding-top: 7vh;
     width: 100vw;
-    height: 100vh;
+    height: 80vh;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -11,6 +11,11 @@
 .main-title {
     font-family: "Comic Sans MS";
     font-size: 5em;
+}
+
+.main-subtitle {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.7);
 }
 
 .card {
