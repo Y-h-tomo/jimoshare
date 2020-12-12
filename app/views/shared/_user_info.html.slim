@@ -29,5 +29,7 @@
             | 登録email
           = @user.email
         .card-footer.control.has-icons-left
-          = link_to edit_user_registration_path,class:"button is-success" do
-            i.fas.fa-user-edit
+          = link_to edit_user_registration_path,class:"is-success" do
+            span.has-text-success
+              i.fas.fa-user-edit
+              |編集する

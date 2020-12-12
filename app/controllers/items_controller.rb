@@ -26,7 +26,6 @@ class ItemsController < ApplicationController
     params(:item).permit(
       :name,
       :quantity,
-      :quantity,
       :description,
       :category_id,
       :condition_id,
