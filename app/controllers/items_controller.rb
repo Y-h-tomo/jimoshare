@@ -33,7 +33,8 @@ class ItemsController < ApplicationController
       :deadline,
       :prefecture_id,
       :price,
-      :contact_location
+      :contact_location,
+      :image
     ).merge(user_id: current_user.id)
   end
 end
