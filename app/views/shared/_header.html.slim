@@ -10,21 +10,21 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
     .navbar-start
       a.navbar-item
         |  商品一覧
-      a.navbar-item
-        |  チケット一覧
-      .navbar-item.has-dropdown.is-hoverable
-        a.navbar-link
-          |  マイページ
-        .navbar-dropdown
-          a.navbar-item
-            |  出品済商品
-          a.navbar-item
-            |  ストック
-          a.navbar-item
-            | お気に入り
-          hr.navbar-divider
-          a.navbar-item
-            |  チケット受け取り
+      - if user_signed_in?
+        a.navbar-item
+          |  チケット一覧
+        .navbar-item.has-dropdown.is-hoverable
+            = link_to "マイページ", user_path(current_user),class:"navbar-item"
+            .navbar-dropdown
+              a.navbar-item
+                |  出品済商品
+              a.navbar-item
+                |  ストック
+              a.navbar-item
+                | お気に入り
+              hr.navbar-divider
+              a.navbar-item
+                |  チケット受け取り
     .navbar-end
       .navbar-item
         .buttons
