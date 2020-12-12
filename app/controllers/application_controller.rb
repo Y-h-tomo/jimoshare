@@ -4,11 +4,12 @@ class ApplicationController < ActionController::Base
 
   private
 
-def configure_permitted_parameters
-  devise_parameter_sanitizer.permit(:sign_up, keys: [:nickname, :phone_number,:contact_email,:contact_location,:prefecture_id])
-end
-def alert_message
-  flash[:alert] = "このポートフォリオページは現在開発中です。サービス利用はできません。"
-end
+  def configure_permitted_parameters
+    devise_parameter_sanitizer.permit(:sign_up,
+                                      keys: [:nickname, :phone_number, :contact_email, :contact_location, :prefecture_id])
+  end
 
+  def alert_message
+    flash[:alert] = 'このポートフォリオページは現在開発中です。サービス利用はできません。'
+  end
 end

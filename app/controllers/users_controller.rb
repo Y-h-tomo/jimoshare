@@ -1,12 +1,12 @@
 class UsersController < ApplicationController
-before_action :set_user
-before_action :authenticate_user!, except: :show
+  before_action :set_user
+  before_action :authenticate_user!, except: :show
 
   def edit
   end
 
   def update
-  　@user.update(user_params)
+    @user.update(user_params)
   end
 
   def show
@@ -15,19 +15,20 @@ before_action :authenticate_user!, except: :show
   def destroy
   end
 
-private
+  private
 
-def user_params
-  params.require(:user).permit(
-    :nickname,
-    :email,
-    :phone_number,
-    :contact_email,
-    :contact_location,
-    :prefecture_id
-  )
-end
-def set_user
-  @user = User.find(params[:id])
-end
+  def user_params
+    params.require(:user).permit(
+      :nickname,
+      :email,
+      :phone_number,
+      :contact_email,
+      :contact_location,
+      :prefecture_id
+    )
+  end
+
+  def set_user
+    @user = User.find(params[:id])
+  end
 end
