@@ -5,4 +5,15 @@ class User < ApplicationRecord
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
   belongs_to_active_hash :prefecture
+
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  VALID_PHONE_NUBER_REGEX = /\A0+[0-9]+0+\d{7,8}\z/.freeze
+
+  with_options presence: true do
+    validates :nickname
+    validates :email
+    validates :password, format: { with: PASSWORD_REGEX }
+    validates :phone_number, format: { with: VALID_PHONE_NUBER_REGEX }
+  end
+  validates :prefecture_id, numericality: { other_than: 1 }
 end

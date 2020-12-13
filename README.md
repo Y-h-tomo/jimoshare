@@ -1,6 +1,6 @@
 # jimoshare の ER 図
 
-![jimoshareのER図](public/jimoshare.png)
+![jimoshareのER図](app/assets/images/jimoshare.png)
 
 # テーブル構成
 
