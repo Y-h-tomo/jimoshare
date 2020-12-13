@@ -1,4 +1,6 @@
-section.item-form-wrapper
-  .hero.is-medium.is-light.is-bold
-    h1.title.form-title
-      |商品一覧
+section.item-form-wrapper.columns.is-fullheight
+  =render 'shared/aside_menu'
+  .container.column.is-10
+    .section
+      =render partial:'item',collection:@items
+

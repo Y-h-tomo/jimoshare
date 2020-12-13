@@ -6,3 +6,20 @@
     height: 120vh;
     background: url("item-bg.png");
 }
+
+.item-form {
+    padding: 30px;
+    max-width: 500px;
+    margin: 20px auto;
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+#deadline {
+    width: 60%;
+}
+
+#quantity {
+    width: 30%;
+}
+
+.item-info-card {}

@@ -1,0 +1,24 @@
+  .card.item-info-card
+    .card-header
+      span.card-header-icon.tag.is-warning.is-light
+        |商品名
+      .card-header-title
+        = item.name
+    .card-image
+      figure.image.is-128x128
+        = image_tag item.image
+    .card-content
+      p.tag
+        | 説明/条件
+      = item.description
+      p.tag
+        | 価格
+      = item.price
+      p.tag
+        | 個数
+      = item.quantity
+      p.tag
+        | 引き渡し期限日時
+      = item.deadline
+
+

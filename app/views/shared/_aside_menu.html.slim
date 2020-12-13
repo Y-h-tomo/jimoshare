@@ -1,0 +1,35 @@
+aside.menu.column.is-2.is-narrow-mobile.is-fullheight.section
+  p.menu-label.is-size-3
+    |  商品一覧
+  p.menu-label.is-size-5
+    |  並び替え
+  ul.menu-list
+    li
+      a
+        | 新規登録順
+    li
+      a
+        | 価格が安い順
+    li
+      a
+        | 期限が近い順
+  p.menu-label.is-size-5
+    |フィルター
+  ul.menu-list
+    li
+      a
+        | 分類選択
+    li
+      a
+        | エリア選択
+  - if user_signed_in?
+    p.menu-label.is-size-5
+      |  マイページリンク
+    ul.menu-list
+      li
+        = link_to "出品する",new_item_path
+      li
+        a
+          |  チケット一覧
+      li
+        = link_to "#{current_user.nickname}さん", user_path(current_user)
