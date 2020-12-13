@@ -1,0 +1,31 @@
+  .card.item-info-card
+    .card-header
+      span.card-header-icon.tag.is-warning.is-light
+        |商品名
+      .card-header-title
+        = item.name
+    .tags.has-addons
+      span.tag.icon.card-tag
+        i.fas.fa-folder
+      span.tag.is-info.is-light
+        = item.category.name
+      span.tag.icon.card-tag
+        i.fas.fa-map-marked-alt
+      span.tag.is-success.is-light
+        = item.prefecture.name
+    .level
+      .card-image
+        figure.image.is-128x128
+          = image_tag item.image
+      .card-content
+        span.tag
+          | 価格
+        = item.price
+        span.tag
+          | 個数
+        = item.quantity
+        span.tag
+          | 引き渡し期限日時
+        = item.deadline
+
+

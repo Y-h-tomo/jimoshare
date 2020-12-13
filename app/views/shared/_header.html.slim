@@ -8,13 +8,13 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
       span[aria-hidden="true"]
   #navbarBasicExample.navbar-menu
     .navbar-start
-      a.navbar-item
-        |  商品一覧
+      = link_to "商品一覧",items_path, class:"navbar-item"
       - if user_signed_in?
+        = link_to "出品する",new_item_path, class:"navbar-item"
         a.navbar-item
           |  チケット一覧
         .navbar-item.has-dropdown.is-hoverable
-            = link_to "マイページ", user_path(current_user),class:"navbar-item"
+            = link_to "#{current_user.nickname}さん", user_path(current_user),class:"navbar-item has-text-info"
             .navbar-dropdown
               a.navbar-item
                 |  出品済商品

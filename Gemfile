@@ -44,6 +44,8 @@ group :development do
   # Spring speeds up development by keeping your application running in the background. Read more: https://github.com/rails/spring
   gem 'spring'
   gem 'spring-watcher-listen', '~> 2.0.0'
+# 以下、追加gem
+# コードチェック用
   gem 'rubocop', require: false
 end
 
@@ -51,6 +53,16 @@ end
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
 gem 'slim-rails'
 gem 'html2slim'
+
+# 以下、追加gem
+
+# ユーザー管理用
 gem 'devise'
+# レイアウト用アイコン
 gem "font-awesome-sass"
+# 定型データ挿入用
 gem 'active_hash'
+# 画像投稿,編集用
+gem 'mini_magick'
+gem 'image_processing', '~> 1.2'
+gem "aws-sdk-s3", require: false
