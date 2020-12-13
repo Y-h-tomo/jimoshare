@@ -30,7 +30,7 @@
         lavel.has-text-white
           |価格（1個あたり）
         .control.has-icons-left
-          = f.text_field :price, class:"input", id:"price", placeholder:"価格（1個あたり）"
+          = f.text_field :price, class:"input", id:"price", placeholder:"価格（1個あたり）",maxlength: "6"
           span.icon.is-small.is-left
             i.fas.fa-yen-sign
       .field

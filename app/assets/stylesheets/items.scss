@@ -5,6 +5,7 @@
     padding-top: 7vh;
     height: 120vh;
     background: url("item-bg.png");
+    overflow: scroll;
 }
 
 .item-form {
@@ -12,6 +13,12 @@
     max-width: 500px;
     margin: 20px auto;
     background-color: rgba(0, 0, 0, 0.7);
+}
+
+.item-info-card {
+    margin: 1em;
+    padding: 0.5em;
+    width: 30em;
 }
 
 #deadline {
@@ -23,3 +30,7 @@
 }
 
 .item-info-card {}
+
+.card-tag {
+    margin-left: 10px;
+}
