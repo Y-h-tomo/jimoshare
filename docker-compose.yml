@@ -7,10 +7,10 @@ services:
       - ./environments/db.env
     command: bundle exec puma -C config/puma.rb
     volumes:
-      - .:/jimoshare
-      - public-data:/jimoshare/public
-      - tmp-data:/jimoshare/tmp
-      - log-data:/jimoshare/log
+      - .:/jimoshare-app
+      - public-data:/jimoshare-app/public
+      - tmp-data:/jimoshare-app/tmp
+      - log-data:/jimoshare-app/log
     depends_on:
       - db
   db:
@@ -25,8 +25,8 @@ services:
     build:
       context: containers/nginx
     volumes:
-      - public-data:/jimoshare/public
-      - tmp-data:/jimoshare/tmp
+      - public-data:/jimoshare-app/public
+      - tmp-data:/jimoshare-app/tmp
     ports:
       - 80:80
     depends_on:
