@@ -31,61 +31,61 @@ RSpec.describe Item, type: :model do
       end
     end
 
-    context "商品の出品ができない時" do
-      it "商品名が空白だと出品できない" do
+    context '商品の出品ができない時' do
+      it '商品名が空白だと出品できない' do
         @item.name = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Name can't be blank")
       end
-      it "商品名が40文字を超えていると出品できない" do
+      it '商品名が40文字を超えていると出品できない' do
         @item.name = Faker::Lorem.characters(number: 41)
         @item.valid?
-        expect(@item.errors.full_messages).to include("Name is too long (maximum is 40 characters)")
+        expect(@item.errors.full_messages).to include('Name is too long (maximum is 40 characters)')
       end
-      it "画像がないと出品できない" do
+      it '画像がないと出品できない' do
         @item.image = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Image can't be blank")
       end
-      it "商品説明・条件がないと出品できない" do
+      it '商品説明・条件がないと出品できない' do
         @item.description = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Description can't be blank")
       end
-      it "商品説明・条件が200文字を超えていると出品できない" do
+      it '商品説明・条件が200文字を超えていると出品できない' do
         @item.description = Faker::Lorem.characters(number: 201)
         @item.valid?
-        expect(@item.errors.full_messages).to include("Description is too long (maximum is 200 characters)")
+        expect(@item.errors.full_messages).to include('Description is too long (maximum is 200 characters)')
       end
-      it "価格が未入力だと出品できない" do
+      it '価格が未入力だと出品できない' do
         @item.price = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Price can't be blank")
       end
-      it "価格が1_000_000円以上だと出品できない" do
+      it '価格が1_000_000円以上だと出品できない' do
         @item.price = 1_000_000
         @item.valid?
-        expect(@item.errors.full_messages).to include("Price must be less than 1000000")
+        expect(@item.errors.full_messages).to include('Price must be less than 1000000')
       end
-      it "個数が未入力だと出品できない" do
+      it '個数が未入力だと出品できない' do
         @item.quantity = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Quantity can't be blank")
       end
-      it "個数が100個以上だと出品できない" do
+      it '個数が100個以上だと出品できない' do
         @item.quantity = 100
         @item.valid?
-        expect(@item.errors.full_messages).to include("Quantity must be less than 100")
+        expect(@item.errors.full_messages).to include('Quantity must be less than 100')
       end
-      it "引き渡し期限日が未入力だと出品できない" do
-        @item.deadline= nil
+      it '引き渡し期限日が未入力だと出品できない' do
+        @item.deadline = nil
         @item.valid?
         expect(@item.errors.full_messages).to include("Deadline can't be blank")
       end
-      it "引き渡し期限日が現在より過去だと出品できない" do
-        @item.deadline = Faker::Date.between_except(from: 1.year.ago,  to: Date.today ,excepted: Date.today)
+      it '引き渡し期限日が現在より過去だと出品できない' do
+        @item.deadline = Faker::Date.between_except(from: 1.year.ago, to: Date.today, excepted: Date.today)
         @item.valid?
-        expect(@item.errors.full_messages).to include("Deadline は今日以降のものを選択してください")
+        expect(@item.errors.full_messages).to include('Deadline は今日以降のものを選択してください')
       end
       it '分類選択をしていないと出品できない' do
         @item.category_id = 1
@@ -107,7 +107,6 @@ RSpec.describe Item, type: :model do
         @item.valid?
         expect(@item.errors.full_messages).to include("Contact location can't be blank")
       end
-
     end
   end
 end

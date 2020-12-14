@@ -23,7 +23,7 @@ class Item < ApplicationRecord
   validate :date_before_start
   def date_before_start
     return if deadline.blank?
-    errors.add(:deadline,"は今日以降のものを選択してください") if deadline < Date.today
-  end
 
+    errors.add(:deadline, 'は今日以降のものを選択してください') if deadline < Date.today
+  end
 end

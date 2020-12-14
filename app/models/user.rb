@@ -12,7 +12,7 @@ class User < ApplicationRecord
 
   with_options presence: true do
     validates :nickname
-    validates :email
+    validates :email, uniqueness: { case_sensitive: false }
     validates :password, format: { with: PASSWORD_REGEX }
     validates :phone_number, format: { with: VALID_PHONE_NUBER_REGEX }
   end

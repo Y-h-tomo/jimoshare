@@ -3,36 +3,40 @@
       span.card-header-icon.tag.is-warning.is-light
         |商品名
       .card-header-title
-        = item.name
+        = @item.name
     .tags.has-addons
       span.tag.icon.card-tag
         i.fas.fa-folder
       span.tag.is-info.is-light
-        = item.category.name
+        = @item.category.name
       span.tag.icon.card-tag
         i.fas.fa-map-marked-alt
       span.tag.is-success.is-light
-        = item.prefecture.name
+        = @item.prefecture.name
     .level
       .card-image
-        figure.image.is-128x128
-          = image_tag item.image,alt:"#{item.name}の画像"
+        figure.image
+          = image_tag @item.image,alt:"#{@item.name}の画像"
       .card-content
         span.tag
           | 価格
-        = item.price
+        = @item.price
         br
         span.tag
           | 個数
-        = item.quantity
+        = @item.quantity
         br
         span.tag
           | 引き渡し期限日時
-        = item.deadline
+        = @item.deadline
     .card-contant.control.has-icons-left
-      = link_to item_path(item),class:"button is-info" do
-        span.has-text-white
-          i.fas.fa-eye
-          |詳細へ
+        = link_to item_path(@item),method: :delete,class:"button is-danger" do
+          span.has-text-white
+            i.fas.fa-trash-alt
+            |削除する
+        = link_to edit_item_path(@item),class:"button is-success" do
+          span.has-text-white
+            i.fas.fa-edit
+            |編集する
 
 

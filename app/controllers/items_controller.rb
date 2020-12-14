@@ -1,4 +1,6 @@
 class ItemsController < ApplicationController
+  before_action :set_item, only: %i[show edit update destroy]
+
   def index
     @items = Item.all
   end
@@ -13,6 +15,23 @@ class ItemsController < ApplicationController
       redirect_to items_path
     else
       render :new
+    end
+  end
+
+  def show
+  end
+
+  def edit
+  end
+
+  def update
+  end
+
+  def destroy
+    if @item.destroy
+      redirect_to items_path
+    else
+      render :show
     end
   end
 

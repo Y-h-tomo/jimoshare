@@ -9,6 +9,10 @@ RSpec.describe User, type: :model do
       it 'データが全て正しく入力されているとき、ユーザー登録ができる' do
         expect(@user).to be_valid
       end
+      it '問い合わせemailが未入力でもユーザー登録ができる' do
+        @user.contact_email = nil
+        expect(@user).to be_valid
+      end
     end
   end
 end
