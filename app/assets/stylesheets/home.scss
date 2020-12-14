@@ -4,7 +4,7 @@
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    background-image: image-url("top.png");
+    background-image: url("top.png");
 }
 
 .main-title {
@@ -28,5 +28,5 @@
     height: 120vh;
     overflow: scroll;
     background-position: center;
-    background-image: image-url("jimo_form_bg.png");
+    background-image: url("jimo_form_bg.png");
 }
