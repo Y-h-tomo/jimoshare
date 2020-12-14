@@ -18,7 +18,7 @@ RSpec.describe Item, type: :model do
         expect(@item).to be_valid
       end
       it '全ての情報が正しく入力されており,個数が99個でも出品できる' do
-        @item.quantity  = 99
+        @item.quantity = 99
         expect(@item).to be_valid
       end
       it '全ての情報が正しく入力されており,価格が0円でも出品できる' do
@@ -29,7 +29,6 @@ RSpec.describe Item, type: :model do
         @item.price = 999_999
         expect(@item).to be_valid
       end
-
     end
   end
 end
