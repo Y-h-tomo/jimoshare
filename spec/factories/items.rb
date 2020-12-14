@@ -4,7 +4,7 @@ FactoryBot.define do
     description { Faker::Lorem.sentence }
     price { Faker::Number.number(digits: 6) }
     quantity { Faker::Number.number(digits: 2) }
-    deadline { Faker::Date.between(from: Date.today, to: 1.year.ago) }
+    deadline { Faker::Date.between(from: Date.today, to: 1.year.after) }
     category_id  { Faker::Number.between(from: 2, to: 8) }
     condition_id { Faker::Number.between(from: 2, to: 5) }
     prefecture_id { Faker::Number.between(from: 2, to: 48) }
