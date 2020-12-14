@@ -75,3 +75,5 @@ gem 'image_processing', '~> 1.2'
 gem "aws-sdk-s3", require: false
 #テストチェック用
 gem 'pry-rails'
+# 検索機能用
+gem 'ransack'

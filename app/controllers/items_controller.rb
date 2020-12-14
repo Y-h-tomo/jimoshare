@@ -1,5 +1,6 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
+  before_action :search_items, only: %i[index search]
 
   def index
     @items = Item.all
@@ -41,10 +42,18 @@ class ItemsController < ApplicationController
     end
   end
 
+  def search
+    @results = @p.result.includes(:category)
+  end
+
   private
 
   def set_item
     @item = Item.find(params[:id])
+  end
+
+  def search_items
+    @p = Item.ransack(params[:q])
   end
 
   def item_params

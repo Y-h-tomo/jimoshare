@@ -26,4 +26,17 @@ class Item < ApplicationRecord
 
     errors.add(:deadline, 'は今日以降のものを選択してください') if deadline < Date.today
   end
+
+  def self.sort(selection)
+    case selection
+    when 'new'
+      all.order(created_at: :DESC)
+    when 'old'
+      all.order(created_at: :ASC)
+    when 'price'
+      all.order(price: :DESC)
+    when 'limit'
+      all.order(deadline: :ASC)
+    end
+  end
 end
