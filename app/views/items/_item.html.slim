@@ -9,23 +9,24 @@
       i.fas.fa-folder
     span.tag.is-info.is-light
       = item.category.name
+  .tags.has-addons
     span.tag.icon
       i.fas.fa-map-marked-alt
     span.tag.is-success.is-light
       = item.prefecture.name
-  .card-image.level
-    figure.image.is-128x128.level-left
+  .card-image.level.index-image
+    figure.image
       = image_tag item.image,alt:"#{item.name}の画像"
-    .card-content
-        span.tag
+  .card-content
+        span.tag.card-info
           | 価格:
         = item.price
         br
-        span.tag
+        span.tag.card-info
           | 個数:
         = item.quantity
         br
-        span.tag
+        span.tag.card-info
           | 期限日時:
         = item.deadline
   .card-footer.control.has-icons-left

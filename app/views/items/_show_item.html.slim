@@ -1,4 +1,5 @@
-  .card.item-info-card
+.container
+  .card.item-show-card
     .card-header
       span.card-header-icon.tag.is-warning.is-light
         |商品名
@@ -13,21 +14,20 @@
         i.fas.fa-map-marked-alt
       span.tag.is-success.is-light
         = @item.prefecture.name
-    .level
-      .card-image
+      .card-image.level
         figure.image
           = image_tag @item.image,alt:"#{@item.name}の画像"
       .card-content
-        span.tag
-          | 価格
+        span.tag.card-info
+          | 価格:
         = @item.price
         br
-        span.tag
-          | 個数
+        span.tag.card-info
+          | 個数:
         = @item.quantity
         br
-        span.tag
-          | 引き渡し期限日時
+        span.tag.card-info
+          | 期限日時:
         = @item.deadline
     .card-content.card-description
       span.tag

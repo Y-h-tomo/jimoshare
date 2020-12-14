@@ -1,0 +1,46 @@
+= search_form_for @p, url: items_search_path do |f|
+    = f.label :name_eq, '商品名'
+    = f.collection_select :name_eq, @item_name, :name, :name,  include_blank: '指定なし'
+    br
+    = f.submit '検索'
+- if @items.length !=0
+    - @items.each do |item|
+        .card.item-info-card
+            .card-header
+                .card-header-title.item-card-title
+                    span.card-header-icon.tag.is-warning.is-light
+                        |商品名
+                    = item.name
+            .tags.has-addons
+                span.tag.icon
+                    i.fas.fa-folder
+                span.tag.is-info.is-light
+                  = item.category.name
+                span.tag.icon
+                  i.fas.fa-map-marked-alt
+                span.tag.is-success.is-light
+                   = item.prefecture.name
+            .card-image.level
+                figure.image.is-128x128.level-left
+                    = image_tag item.image,alt:"#{item.name}の画像"
+                .card-content
+                    span.tag
+                        | 価格:
+                    = item.price
+                    br
+                    span.tag
+                        | 個数:
+                    = item.quantity
+                    br
+                    span.tag
+                        | 期限日時:
+                    = item.deadline
+            .card-footer.control.has-icons-left
+                = link_to item_path(item),class:"button is-info is-small" do
+                    span.has-text-white
+                        i.fas.fa-eye
+                        |詳細へ
+
+
+
+

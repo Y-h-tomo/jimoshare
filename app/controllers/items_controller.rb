@@ -4,6 +4,7 @@ class ItemsController < ApplicationController
 
   def index
     @items = Item.all
+    set_item_column
   end
 
   def new
@@ -43,7 +44,7 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:category)
+    @results = @p.result.includes(:name)
   end
 
   private
@@ -55,7 +56,9 @@ class ItemsController < ApplicationController
   def search_items
     @p = Item.ransack(params[:q])
   end
-
+  def set_item_column
+    @item_name = Item.select("name").distinct
+  end
   def item_params
     params.require(:item).permit(
       :name,
