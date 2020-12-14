@@ -1,10 +1,8 @@
 class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
-  before_action :search_items, only: %i[index search]
 
   def index
-    @items = Item.all
-    set_item_column
+    @items =  Item.all.order('created_at DESC')
   end
 
   def new
@@ -44,7 +42,8 @@ class ItemsController < ApplicationController
   end
 
   def search
-    @results = @p.result.includes(:name)
+    selection = params[:keyword]
+    @items = Item.sort(selection)
   end
 
   private
@@ -53,12 +52,6 @@ class ItemsController < ApplicationController
     @item = Item.find(params[:id])
   end
 
-  def search_items
-    @p = Item.ransack(params[:q])
-  end
-  def set_item_column
-    @item_name = Item.select("name").distinct
-  end
   def item_params
     params.require(:item).permit(
       :name,
@@ -72,5 +65,13 @@ class ItemsController < ApplicationController
       :contact_location,
       :image
     ).merge(user_id: current_user.id)
+  end
+
+  def sort_limit
+    @items = Item.order
+  end
+  def sort_price
+  end
+  def sort_new
   end
 end
