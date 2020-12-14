@@ -15,10 +15,22 @@
     background-color: rgba(0, 0, 0, 0.7);
 }
 
+.item-index {
+    // overflow: scroll;
+}
+
 .item-info-card {
     margin: 1em;
     padding: 0.5em;
-    width: 30em;
+    width: 25em;
+}
+
+.card-description {
+    word-break: break-all;
+}
+
+.item-card-title {
+    word-break: break-all;
 }
 
 #deadline {
@@ -28,8 +40,6 @@
 #quantity {
     width: 30%;
 }
-
-.item-info-card {}
 
 .card-tag {
     margin-left: 10px;

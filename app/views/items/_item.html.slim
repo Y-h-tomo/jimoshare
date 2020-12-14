@@ -1,38 +1,37 @@
-  .card.item-info-card
-    .card-header
+.card.item-info-card
+  .card-header
+    .card-header-title.item-card-title
       span.card-header-icon.tag.is-warning.is-light
         |商品名
-      .card-header-title
-        = item.name
-    .tags.has-addons
-      span.tag.icon.card-tag
-        i.fas.fa-folder
-      span.tag.is-info.is-light
-        = item.category.name
-      span.tag.icon.card-tag
-        i.fas.fa-map-marked-alt
-      span.tag.is-success.is-light
-        = item.prefecture.name
-    .level
-      .card-image
-        figure.image.is-128x128
-          = image_tag item.image,alt:"#{item.name}の画像"
-      .card-content
+      = item.name
+  .tags.has-addons
+    span.tag.icon
+      i.fas.fa-folder
+    span.tag.is-info.is-light
+      = item.category.name
+    span.tag.icon
+      i.fas.fa-map-marked-alt
+    span.tag.is-success.is-light
+      = item.prefecture.name
+  .card-image.level
+    figure.image.is-128x128.level-left
+      = image_tag item.image,alt:"#{item.name}の画像"
+    .card-content
         span.tag
-          | 価格
+          | 価格:
         = item.price
         br
         span.tag
-          | 個数
+          | 個数:
         = item.quantity
         br
         span.tag
-          | 引き渡し期限日時
+          | 期限日時:
         = item.deadline
-    .card-contant.control.has-icons-left
-      = link_to item_path(item),class:"button is-info" do
-        span.has-text-white
-          i.fas.fa-eye
-          |詳細へ
+  .card-footer.control.has-icons-left
+    = link_to item_path(item),class:"button is-info is-small" do
+      span.has-text-white
+        i.fas.fa-eye
+        |詳細へ
 
 
