@@ -16,7 +16,7 @@
     .level
       .card-image
         figure.image.is-128x128
-          = image_tag item.image
+          = image_tag item.image,alt:"#{item.name}の画像"
       .card-content
         span.tag
           | 価格

@@ -7,16 +7,21 @@ class Item < ApplicationRecord
   has_one_attached :image
 
   with_options presence: true do
-    validates :name
-    validates :quantity
-    validates :description
+    validates :name, length: { maximum: 40 }
+    validates :quantity, numericality: { greater_than: 0, less_than: 100 }
+    validates :description, length: { maximum: 200 }
     validates :deadline
-    validates :price
+    validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { less_than: 1_000_000 }
     validates :contact_location
   end
   with_options numericality: { other_than: 1 } do
     validates :prefecture_id
     validates :category_id
     validates :condition_id
+  end
+  validate :date_before
+
+  def date_before
+    errors.add(:deadline, 'は今日以降のものを選択してください') if deadline < Date.todaytime
   end
 end
