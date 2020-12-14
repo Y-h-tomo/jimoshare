@@ -13,15 +13,17 @@ class Item < ApplicationRecord
     validates :deadline
     validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { less_than: 1_000_000 }
     validates :contact_location
+    validates :image
   end
   with_options numericality: { other_than: 1 } do
     validates :prefecture_id
     validates :category_id
     validates :condition_id
   end
-  validate :date_before
-
-  def date_before
-    errors.add(:deadline) if deadline < Date.today
+  validate :date_before_start
+  def date_before_start
+    return if deadline.blank?
+    errors.add(:deadline,"は今日以降のものを選択してください") if deadline < Date.today
   end
+
 end
