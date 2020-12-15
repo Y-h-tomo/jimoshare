@@ -8,6 +8,9 @@ Rails.application.routes.draw do
   root 'home#index'
   get 'items/search'
   resources :users, only: %i[edit update show]
-  resources :items
+  get 'items/stock'
+  resources :items do
+    post 'stock_out'
+  end
 
 end

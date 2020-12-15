@@ -40,18 +40,24 @@
       .content
         = @item.contact_location
     .card-footer.level
-      .level-left.has-icons-left.control
-        = link_to edit_item_path(@item),class:"button is-success" do
-          span.has-text-white
-            i.fas.fa-edit
-            |編集
-      .level-item.has-icons.control
-        = link_to :back, class:"button is-dark is-outlined" do
-          span.fas.fa-undo
-      .level-right.has-icons-left.control
-        = link_to item_path(@item),method: :delete,class:"button is-danger" do
-          span.has-text-white
-            i.fas.fa-trash-alt
-            |削除
+        .level-left.has-icons-left.control
+          = link_to edit_item_path(@item),class:"button is-success" do
+            span.has-text-white
+              i.fas.fa-edit
+              |編集
+        .level-item.has-icons.control
+          = link_to :back, class:"button is-dark is-outlined" do
+            span.fas.fa-undo
+        .level-right.has-icons-left.control
+          = link_to item_path(@item),method: :delete,class:"button is-danger" do
+            span.has-text-white
+              i.fas.fa-trash-alt
+              |削除
+    .card-footer.level
+        .level-item.has-icons.control
+          = link_to item_stock_out_path(@item), method: :post,class:"button is-warning is-outlined" do
+            span.
+              i.fas.fa-edit
+              |出品する
 
 

@@ -9,6 +9,12 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     overflow: scroll;
 }
 
+.stock-form {
+    padding: 30px;
+    max-width: 500px;
+    background-color: $jimo-bg;
+}
+
 .item-form {
     padding: 30px;
     max-width: 500px;

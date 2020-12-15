@@ -1,0 +1,95 @@
+= form_with model: @item, url: stock_path, class: 'stock-form level', local: true do |f|
+  .container
+    .field
+      = render 'shared/error_messages', model: f.object
+    .field.must-form
+      p.has-text-danger
+        |赤枠部分は入力必須です
+      .field
+        lavel.has-text-white
+          |商品名(40文字以内)
+        .control.has-icons-left
+          = f.text_area :name, class:"input", id:"name", placeholder:"商品名(40文字以内)", maxlength:"40"
+          span.icon.is-small.is-left
+            i.fas.fa-carrot
+      .field
+        lavel.has-text-white
+          |商品画像
+        .control.has-icons-left
+          = f.file_field :image, class:"input", id:"image",placeholder:"商品画像", autofocus: true
+          span.icon.is-small.is-left
+            i.fas.fa-image
+      .field
+        lavel.has-text-white
+          |商品説明・条件(200文字以内)
+        .control.has-icons-left
+          = f.text_area :description, class:"input", id:"description", placeholder:"商品説明・条件(200文字以内)",maxlength: "200"
+          span.icon.is-small.is-left
+            i.fas.fa-align-left
+      .field
+        lavel.has-text-white
+          |価格（1個あたり）
+        .control.has-icons-left
+          = f.text_field :price, class:"input", id:"price", placeholder:"価格（1個あたり）",maxlength: "6"
+          span.icon.is-small.is-left
+            i.fas.fa-yen-sign
+      .field
+        lavel.has-text-white
+          |個数（99個以内）
+        .control.has-icons-left
+          = f.number_field :quantity, class:"input", id:"quantity", placeholder:"個数(99個以内)",min:1,max:99
+          span.icon.is-small.is-left
+            i.fas.fa-sort-numeric-up-alt
+      .field
+        lavel.has-text-white
+          |引き渡し期限日時(現在より1年以内)
+          .control.has-icons-left
+            = f.datetime_field :deadline, class:"input", id:"deadline"
+            span.icon.is-small.is-left
+              i.fas.fa-calendar-day
+      .field
+        .control
+          lavel.has-text-white
+            |分類
+          span.icon.has-text-white
+            i.fas.fa-folder
+          = f.collection_select(:category_id,Category.all, :id, :name, {}, {class:"select", id:"item-category"})
+      .field
+        .control
+          lavel.has-text-white
+            |エリア
+          span.icon.has-text-white
+            i.fas.fa-map-marked-alt
+          = f.collection_select(:prefecture_id,Prefecture.all, :id, :name, {}, {class:"select", id:"item-prefecture"})
+      .field
+        .control
+          lavel.has-text-white
+            |状態
+          span.icon.has-text-white
+            i.fas.fa-exclamation-circle
+          = f.collection_select(:condition_id,Condition.all, :id, :name, {}, {class:"select", id:"item-condition"})
+      .field
+        lavel.has-text-white
+          |引き渡し場所
+        .control.has-icons-left
+          = f.text_field :contact_location, class:"input", id:"password-confirmation", placeholder:"引き渡し場所"
+          span.icon.is-small.is-left
+            i.fas.fa-map-marker-alt
+      .field
+        lavel.has-text-white
+          | お知らせ日
+        .control.has-icons-left
+          =  f.datetime_field :limit, class:"input", id:"limit"
+    .field.has-text-success
+        h2.form-bottom-text
+          |  「
+          span.fas.fa-edit
+          | 編集する 」のボタンを押すことにより、出品に関わる利用規約に同意したものとみなします
+        .control.has-icons-left.hero
+          = f.submit  "編集する", class:"button is-success is-outlined"
+          span.icon
+            i.fas.fa-edit.has-text-success
+    .field.hero
+      = link_to :back, class:"button is-dark is-outlined" do
+        span.fas.fa-undo
+        |　元のページに戻る

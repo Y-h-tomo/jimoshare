@@ -18,8 +18,7 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
             .navbar-dropdown
               a.navbar-item
                 |  出品済商品
-              a.navbar-item
-                |  ストック
+              = link_to "ストック一覧",items_stock_path(current_user), class:"navbar-item"
               a.navbar-item
                 | お気に入り
               hr.navbar-divider
