@@ -1,6 +1,7 @@
 // Place all the styles related to the items controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: https://sass-lang.com/
+$jimo-bg: rgba(0, 0, 0, 0.7);
 .item-form-wrapper {
     padding-top: 7vh;
     height: 120vh;
@@ -12,12 +13,20 @@
     padding: 30px;
     max-width: 500px;
     margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $jimo-bg;
 }
 
 .item-index {
     display: flex;
     flex-flow: row wrap;
+}
+
+.item-aside-menu {
+    background-color: $jimo-bg;
+}
+
+.item-sort {
+    width: 100%;
 }
 
 .item-info-card {
@@ -54,6 +63,11 @@
 
 #quantity {
     width: 30%;
+}
+
+#keyword {
+    height: 2.3em;
+    width: 8em;
 }
 
 .card-tag {

@@ -1,18 +1,8 @@
-aside.menu.column.is-2.is-narrow-mobile.is-fullheight.section
+aside.menu.column.is-2.is-narrow-mobile.is-fullheight.section.item-aside-menu
   p.menu-label.is-size-3
     |  商品一覧
   p.menu-label.is-size-5
-    |  並び替え
-  ul.menu-list
-    li
-      a
-        | 新着順
-    li
-      a
-        | 価格が安い順
-    li
-      a
-        | 期限が近い順
+    =render 'sort_form'
   p.menu-label.is-size-5
     |フィルター
   ul.menu-list

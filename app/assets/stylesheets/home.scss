@@ -1,3 +1,4 @@
+$jimo-bg: rgba(0, 0, 0, 0.7);
 .top-wrapper {
     padding-top: 7vh;
     height: 60vh;
@@ -14,7 +15,7 @@
 
 .main-subtitle {
     color: white;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $jimo-bg;
 }
 
 .top-card {

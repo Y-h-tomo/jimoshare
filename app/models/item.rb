@@ -31,10 +31,10 @@ class Item < ApplicationRecord
     case selection
     when 'new'
       all.order(created_at: :DESC)
-    when 'old'
-      all.order(created_at: :ASC)
+    when 'many'
+      all.order(quantity: :DESC)
     when 'price'
-      all.order(price: :DESC)
+      all.order(price: :ASC)
     when 'limit'
       all.order(deadline: :ASC)
     end

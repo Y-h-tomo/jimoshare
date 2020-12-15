@@ -1,3 +1,4 @@
+$jimo-bg: rgba(0, 0, 0, 0.7);
 .user-form-wrapper {
     padding-top: 7vh;
     height: 120vh;
@@ -22,7 +23,7 @@
     padding: 30px;
     max-width: 500px;
     margin: 20px auto;
-    background-color: rgba(0, 0, 0, 0.7);
+    background-color: $jimo-bg;
 }
 
 #user-prefecture {
