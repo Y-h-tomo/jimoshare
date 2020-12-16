@@ -39,24 +39,29 @@
         | 引き渡し場所
       .content
         = @item.contact_location
-    .card-footer.level
-        .level-left.has-icons-left.control
-          = link_to edit_item_path(@item),class:"button is-success" do
-            span.has-text-white
-              i.fas.fa-edit
-              |編集
-        .level-item.has-icons.control
-          = link_to :back, class:"button is-dark is-outlined" do
-            span.fas.fa-undo
-        .level-right.has-icons-left.control
-          = link_to item_path(@item),method: :delete,class:"button is-danger" do
-            span.has-text-white
-              i.fas.fa-trash-alt
-              |削除
-  - if @item.stock == 0
-    .card-footer.level
+    - if current_user == @item.user
+      .card-footer.level
+          .level-left.has-icons-left.control
+            = link_to edit_item_path(@item),class:"button is-success" do
+              span.has-text-white
+                i.fas.fa-edit
+                |編集
           .level-item.has-icons.control
-            = link_to item_stock_out_path(@item), method: :post,class:"button is-warning is-outlined" do
-              span.
-                i.fas.fa-hand-holding-heart
-                |出品する
+            = link_to :back, class:"button is-dark is-outlined" do
+              span.fas.fa-undo
+          .level-right.has-icons-left.control
+            = link_to item_path(@item),method: :delete,class:"button is-danger" do
+              span.has-text-white
+                i.fas.fa-trash-alt
+                |削除
+    - if @item.stock == true
+      .card-footer.level
+            .level-item.has-icons.control
+              = link_to item_stock_out_path(@item), method: :post,class:"button is-warning is-outlined" do
+                span.
+                  i.fas.fa-hand-holding-heart
+                  |出品する
+            .level-item.has-icons.control
+                span.
+                  i.fas.fa-exclamation-circle
+                  |一度出品するとストックに戻せません

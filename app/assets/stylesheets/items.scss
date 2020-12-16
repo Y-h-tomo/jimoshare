@@ -9,6 +9,13 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     overflow: scroll;
 }
 
+.stock-form-wrapper {
+    padding-top: 7vh;
+    height: 120vh;
+    background-image: image-url("stock_bg.png");
+    overflow: scroll;
+}
+
 .stock-form {
     padding: 30px;
     max-width: 500px;
@@ -68,7 +75,7 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 }
 
 #limit {
-    width: 60%;
+    width: 80%;
 }
 
 #quantity {

@@ -1,5 +1,6 @@
-section.item-form-wrapper
+section.stock-form-wrapper
   .hero.is-medium.is-info.is-bold
     h1.title.form-title
       |ストック一覧
-  =render partial:'item',collection:@items
+  .section.item-index
+    =render partial:'item',collection:@items

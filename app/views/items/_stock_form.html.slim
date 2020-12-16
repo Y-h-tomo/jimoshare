@@ -75,20 +75,23 @@
           = f.text_field :contact_location, class:"input", id:"password-confirmation", placeholder:"引き渡し場所"
           span.icon.is-small.is-left
             i.fas.fa-map-marker-alt
-      .field
-        lavel.has-text-white.checkbox
-          | ストック状態にする
-        .control.has-icons-left
-          span.icon.is-left
-            i.fas.fa-boxes
+      .field.either-form
+        .field
+          lavel.has-text-white.checkbox.has-text-small
+            | ストック状態にする
+            span.icon.is-left
+              i.fas.fa-boxes
           =  f.check_box  :stock, class:"checkbox", id:"stock"
-      .field
-        lavel.has-text-white
-          | お知らせ日
-        .control.has-icons-left
-          =  f.datetime_field :limit, class:"input", id:"limit"
-          span.icon.is-small.is-left
-            i.fas.fa-bullhorn
+          br
+          lavel.has-text-white
+            |(✔︎無しで出品されます)
+        .field
+          lavel.has-text-white
+            | お知らせ日（ストック出品時の機能です）
+          .control.has-icons-left
+            =  f.datetime_field :limit, class:"input", id:"limit"
+            span.icon.is-small.is-left
+              i.fas.fa-bullhorn
     .field.has-text-warning
         h2.form-bottom-text
           |  「
