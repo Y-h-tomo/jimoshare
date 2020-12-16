@@ -1,5 +1,12 @@
-section.user-form-wrapper
-  .hero.is-medium.is-info.is-bold
-    h1.title.form-title
-      |ユーザー情報
-  = render 'user_info'
+section.user-form-wrapper.columns.is-fullheight
+  .container.column.is-4
+      .hero.is-medium.is-primary.is-bold
+          h1.title.form-title
+            |ユーザー情報
+      = render 'user_info'
+  .container.column.is-8
+    .hero.is-medium.is-info.is-bold
+      h1.title.form-title
+        |出品済商品
+    .section.item-index
+        =render partial:'items/item',collection:@items

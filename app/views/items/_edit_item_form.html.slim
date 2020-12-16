@@ -75,6 +75,17 @@
           = f.text_field :contact_location, class:"input", id:"password-confirmation", placeholder:"引き渡し場所"
           span.icon.is-small.is-left
             i.fas.fa-map-marker-alt
+      - if @item.stock == true
+        .field.either-form
+          .field
+            lavel.has-text-white.checkbox.has-text-small
+              | ストック状態にする
+              span.icon.is-left
+                i.fas.fa-boxes
+            =  f.check_box  :stock, class:"checkbox", id:"stock"
+            br
+            lavel.has-text-white
+              |(✔︎無しで編集すると出品されます)
     .field.has-text-success
         h2.form-bottom-text
           |  「

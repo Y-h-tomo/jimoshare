@@ -43,7 +43,7 @@
 ### Association
 
 - belongs_to :user
-- has_one :stocks
+- belongs_to :stock
 - has_many :favorites
 - has_many :likes
 - has_many :comments
@@ -115,13 +115,12 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | user   | references | null: false, foreign_key: true |
-| item   | references | null: false, foreign_key: true |
 | limit  | date       | null: false                    |
 
 ### Association
 
 - belongs_to :user
-- belongs_to :item
+- has_one :item
 
 ## Active_Hash
 

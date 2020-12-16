@@ -2,7 +2,7 @@ class ItemsController < ApplicationController
   before_action :set_item, only: %i[show edit update destroy]
 
   def index
-    @items =  Item.all.order('created_at DESC')
+    @items = Item.where(stock: 0).order('created_at DESC')
   end
 
   def new
@@ -25,8 +25,7 @@ class ItemsController < ApplicationController
   end
 
   def update
-    @item = Item.update(item_params)
-    if @item.save
+    if @item.update(item_params)
       redirect_to item_path(@item)
     else
       render :edit
@@ -46,6 +45,20 @@ class ItemsController < ApplicationController
     @items = Item.sort(selection)
   end
 
+  def stock
+    @items = Item.where(stock: 1).order('created_at DESC')
+  end
+
+  def stock_out
+    @item = Item.find(params[:item_id])
+    @item.stock = 0
+    if @item.save
+      redirect_to items_path
+    else
+      render :stock
+    end
+  end
+
   private
 
   def set_item
@@ -63,15 +76,9 @@ class ItemsController < ApplicationController
       :prefecture_id,
       :price,
       :contact_location,
-      :image
+      :image,
+      :stock,
+      :limit
     ).merge(user_id: current_user.id)
-  end
-
-  def sort_limit
-    @items = Item.order
-  end
-  def sort_price
-  end
-  def sort_new
   end
 end

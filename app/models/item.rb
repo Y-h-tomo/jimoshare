@@ -20,6 +20,7 @@ class Item < ApplicationRecord
     validates :category_id
     validates :condition_id
   end
+
   validate :date_before_start
   def date_before_start
     return if deadline.blank?

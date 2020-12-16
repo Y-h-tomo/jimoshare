@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @items = Item.where(user_id: current_user, stock: false)
   end
 
   def destroy
