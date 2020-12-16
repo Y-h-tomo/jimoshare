@@ -6,7 +6,7 @@ class ApplicationController < ActionController::Base
   private
 
   def check_items
-    @time = Date.today
+    @time = Time.now
     @check_items = Item.where(user_id: current_user, stock: true)
   end
 

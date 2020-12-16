@@ -1,11 +1,9 @@
 class TicketsController < ApplicationController
   def index
     @ticket = Ticket.new
-    @tickets = Ticket
   end
 
   def create
-    # num = random_number_generator(6)
     num = Faker::Number.number(digits: 6)
     @ticket = Ticket.create(
       number: num,
@@ -13,7 +11,7 @@ class TicketsController < ApplicationController
       user_id: current_user.id
     )
     if @ticket.save
-      redirect_to root_path
+      redirect_to items_path
     else
       render :index
     end

@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-  before_action :set_item, only: %i[show edit update destroy]
   def index
     @items = Item.where(stock: 0).order('created_at DESC')
   end
@@ -18,12 +17,24 @@ class ItemsController < ApplicationController
   end
 
   def show
+    set_item
+    count = @item.quantity - @item.tickets.count
+    @count = if count > 0
+               count
+               @item.quantity = count
+             else
+               @item.quantity = 0
+               @item.save
+               '完売しました'
+             end
   end
 
   def edit
+    set_item
   end
 
   def update
+    set_item
     if @item.update(item_params)
       redirect_to item_path(@item)
     else
@@ -32,7 +43,8 @@ class ItemsController < ApplicationController
   end
 
   def destroy
-    if @item.destroy
+    set_item
+    if @item.destroy!
       redirect_to items_path
     else
       render :show
