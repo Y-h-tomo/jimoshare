@@ -49,6 +49,9 @@
           .level-item.has-icons.control
             = link_to :back, class:"button is-dark is-outlined" do
               span.fas.fa-undo
+          .level-item.has-icons.control
+            = link_to item_tickets_path(@item), class:"button is-dark is-outlined" do
+              span.fas.fa-shopping-cart
           .level-right.has-icons-left.control
             = link_to item_path(@item),method: :delete,class:"button is-danger" do
               span.has-text-white

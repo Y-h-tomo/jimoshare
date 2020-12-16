@@ -39,6 +39,8 @@
 | prefecture_id    | integer    | null: false                    |
 | price            | integer    | null: false                    |
 | contact_location | text       | null: false                    |
+| stock            | boolean    |                                |
+| limit            | date       |                                |
 
 ### Association
 
@@ -66,7 +68,7 @@
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
 | item   | references | null: false, foreign_key: true |
-| ticket | integer    | null: false                    |
+| number | integer    | null: false                    |
 
 ### Association
 
@@ -109,18 +111,6 @@
 
 - belongs_to :user
 - belongs_to :item
-
-## stocks テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| limit  | date       | null: false                    |
-
-### Association
-
-- belongs_to :user
-- has_one :item
 
 ## Active_Hash
 

@@ -11,6 +11,7 @@ Rails.application.routes.draw do
   get 'items/stock'
   resources :items do
     post 'stock_out'
+    resources :tickets
   end
 
 end
