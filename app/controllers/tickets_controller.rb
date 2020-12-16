@@ -1,33 +1,34 @@
 class TicketsController < ApplicationController
-
-
-def index
-  @ticket = Ticket.new
-end
-
-def create
-  num = random_number_generator(6)
-  @ticket =  Ticket.create(number: num,item_id: params[:item_id])
-  if @ticket.save
-    redirect_to root_path
-  else
-    render :index
+  def index
+    @ticket = Ticket.new
+    @tickets = Ticket
   end
-end
 
-def destroy
-end
+  def create
+    # num = random_number_generator(6)
+    num = Faker::Number.number(digits: 6)
+    @ticket = Ticket.create(
+      number: num,
+      item_id: params[:item_id],
+      user_id: current_user.id
+    )
+    if @ticket.save
+      redirect_to root_path
+    else
+      render :index
+    end
+  end
 
-private
+  def destroy
+  end
 
-def set_item
-  @item = Item.find(params[:item_id])
-end
-def random_number_generator(n)
-  ''.tap { |s| n.times { s << rand(0..9).to_s } }
-end
-def ticket_params
-  params.merge(item_id: params[:item_id])
-end
+  private
 
+  def set_item
+    @item = Item.find(params[:item_id])
+  end
+
+  def random_number_generator(n)
+    ''.tap { |s| n.times { s << rand(0..9).to_s } }
+  end
 end

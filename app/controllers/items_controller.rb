@@ -1,5 +1,4 @@
 class ItemsController < ApplicationController
-
   before_action :set_item, only: %i[show edit update destroy]
   def index
     @items = Item.where(stock: 0).order('created_at DESC')
@@ -59,8 +58,6 @@ class ItemsController < ApplicationController
     end
   end
 
-
-
   private
 
   def set_item
@@ -83,5 +80,4 @@ class ItemsController < ApplicationController
       :limit
     ).merge(user_id: current_user.id)
   end
-
 end
