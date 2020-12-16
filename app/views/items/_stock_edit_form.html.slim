@@ -1,4 +1,4 @@
-= form_with model: @item, url: stock_path, class: 'stock-form level', local: true do |f|
+= form_with model: @item, url: edit_item_path,class: 'stock-form level', local: true do |f|
   .container
     .field
       = render 'shared/error_messages', model: f.object
@@ -75,6 +75,12 @@
           = f.text_field :contact_location, class:"input", id:"password-confirmation", placeholder:"引き渡し場所"
           span.icon.is-small.is-left
             i.fas.fa-map-marker-alt
+    - if @item.stock == 0
+      .field
+        lavel.has-text-white.checkbox
+          | ストック状態にする
+        .control.has-icons-left
+            =  f.check_box  :stock, class:"checkbox", id:"stock"
       .field
         lavel.has-text-white
           | お知らせ日

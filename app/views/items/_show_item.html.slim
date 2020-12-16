@@ -53,11 +53,10 @@
             span.has-text-white
               i.fas.fa-trash-alt
               |削除
+  - if @item.stock == 0
     .card-footer.level
-        .level-item.has-icons.control
-          = link_to item_stock_out_path(@item), method: :post,class:"button is-warning is-outlined" do
-            span.
-              i.fas.fa-edit
-              |出品する
-
-
+          .level-item.has-icons.control
+            = link_to item_stock_out_path(@item), method: :post,class:"button is-warning is-outlined" do
+              span.
+                i.fas.fa-hand-holding-heart
+                |出品する

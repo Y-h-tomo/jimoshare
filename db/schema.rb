@@ -46,7 +46,7 @@ ActiveRecord::Schema.define(version: 2020_12_15_050209) do
     t.text "contact_location", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
-    t.string "stock"
+    t.boolean "stock", default: false, null: false
     t.date "limit"
     t.index ["user_id"], name: "index_items_on_user_id"
   end

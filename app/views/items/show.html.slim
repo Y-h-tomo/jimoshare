@@ -2,4 +2,65 @@ section.item-form-wrapper
   .hero.is-medium.is-info.is-bold
     h1.title.form-title
       |商品詳細
-  = render 'show_item'
+  .container
+  .card.item-show-card
+    .card-header
+      span.card-header-icon.tag.is-warning.is-light
+        |商品名
+      .card-header-title.item-card-title
+        = @item.name
+    .tags.has-addons
+      span.tag.icon.card-tag
+        i.fas.fa-folder
+      span.tag.is-info.is-light
+        = @item.category.name
+      span.tag.icon.card-tag
+        i.fas.fa-map-marked-alt
+      span.tag.is-success.is-light
+        = @item.prefecture.name
+      .card-image.level
+        figure.image
+          = image_tag @item.image,alt:"#{@item.name}の画像"
+      .card-content
+        span.tag.card-info
+          | 価格:
+        = @item.price
+        br
+        span.tag.card-info
+          | 個数:
+        = @item.quantity
+        br
+        span.tag.card-info
+          | 期限日時:
+        = @item.deadline
+    .card-content.card-description
+      span.tag
+        | 引き渡し説明・条件
+      .content
+        = @item.description
+    .card-content.card-description
+      span.tag
+        | 引き渡し場所
+      .content
+        = @item.contact_location
+    .card-footer.level
+        .level-left.has-icons-left.control
+          = link_to edit_item_path(@item),class:"button is-success" do
+            span.has-text-white
+              i.fas.fa-edit
+              |編集
+        .level-item.has-icons.control
+          = link_to :back, class:"button is-dark is-outlined" do
+            span.fas.fa-undo
+        .level-right.has-icons-left.control
+          = link_to item_path(@item),method: :delete,class:"button is-danger" do
+            span.has-text-white
+              i.fas.fa-trash-alt
+              |削除
+    - if @item.stock == true
+      .card-footer.level
+            .level-item.has-icons.control
+              = link_to item_stock_out_path(@item), method: :post,class:"button is-warning is-outlined" do
+                span.
+                  i.fas.fa-hand-holding-heart
+                  |出品する

@@ -1,4 +1,4 @@
-= form_with model: @item, url: stocks_path, class: 'stock-form level', local: true do |f|
+= form_with model: @item, url: items_path, class: 'item-form level', local: true do |f|
   .container
     .field
       = render 'shared/error_messages', model: f.object
@@ -79,12 +79,16 @@
         lavel.has-text-white.checkbox
           | ストック状態にする
         .control.has-icons-left
-            =  f.check_box  :stock, class:"checkbox", id:"stock"
+          span.icon.is-left
+            i.fas.fa-boxes
+          =  f.check_box  :stock, class:"checkbox", id:"stock"
       .field
         lavel.has-text-white
           | お知らせ日
         .control.has-icons-left
           =  f.datetime_field :limit, class:"input", id:"limit"
+          span.icon.is-small.is-left
+            i.fas.fa-bullhorn
     .field.has-text-warning
         h2.form-bottom-text
           |  「
