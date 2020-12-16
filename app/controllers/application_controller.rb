@@ -1,8 +1,14 @@
 class ApplicationController < ActionController::Base
   before_action :configure_permitted_parameters, if: :devise_controller?
   # before_action :alert_message
+  before_action :check_items
 
   private
+
+  def check_items
+    @time = Date.today
+    @check_items = Item.where(user_id: current_user, stock: true)
+  end
 
   def configure_permitted_parameters
     devise_parameter_sanitizer.permit(:sign_up,
