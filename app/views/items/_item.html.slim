@@ -24,12 +24,12 @@
           br
           span.tag.card-info
             | 個数:
-          = item.quantity
+          =  item.quantity - item.tickets.count
           br
           span.tag.card-info
             | 期限日時:
           = item.deadline
-    - if item.quantity == 0
+    - if item.tickets.count >= item.quantity
       .card-footer.control.has-icons-left
         p
           |完売しました

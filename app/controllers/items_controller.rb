@@ -17,15 +17,13 @@ class ItemsController < ApplicationController
   end
 
   def show
-    set_item
-    @initial_quantity = @item.quantity
-    item_quantity = @item.quantity - @item.tickets.count
-    @item.quantity = item_quantity
-    @count = if @item.quantity.positive?
-               item_quantity
+    @item = Item.find(params[:id])
+    @count = if @item.tickets.count.positive?
+               @item.quantity - @item.tickets.count
              else
-               '完売しました'
+               @item.quantity
              end
+    @count = '完売しました' unless @count.positive?
   end
 
   def edit
@@ -68,6 +66,17 @@ class ItemsController < ApplicationController
       render :stock
     end
   end
+
+def buy
+  @item = Item.find(params[:item_id])
+  @count = if @item.tickets.count.positive?
+    @item.quantity - @item.tickets.count
+  else
+    @item.quantity
+  end
+  render json:{ post: post }
+@count = '完売しました' unless @count.positive?
+end
 
   private
 

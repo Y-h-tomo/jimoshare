@@ -1,6 +1,8 @@
-= form_with model: @ticket, url: item_tickets_path, class: 'item-form level', local: true do |f|
+= form_with model: @ticket, url: item_tickets_path, class: 'item-form level', remote: true do |f|
   .container
     .field
       = render 'shared/error_messages', model: f.object
-    .field
-     = f.submit "チケット発券して購入する"
+    .control.has-icons-left.hero
+      = f.submit "チケット購入"
+      span.icon
+        i.fas.fa-ticket-alt.has-text-info.is-large

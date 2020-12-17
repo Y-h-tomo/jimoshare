@@ -52,8 +52,8 @@ ActiveRecord::Schema.define(version: 2020_12_16_085703) do
   end
 
   create_table "tickets", options: "ENGINE=InnoDB DEFAULT CHARSET=utf8mb4", force: :cascade do |t|
-    t.bigint "item_id", null: false
     t.bigint "user_id", null: false
+    t.bigint "item_id", null: false
     t.integer "number", null: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

@@ -23,7 +23,7 @@
         = @item.price
         br
         span.tag.card-info
-          | 残り個数:
+          | 個数:
         = @count
         br
         span.tag.card-info
@@ -42,11 +42,11 @@
           .level-item.has-icons.control
             = link_to :back, class:"button is-dark is-outlined" do
               span.fas.fa-undo
-          - if user_signed_in? && current_user != @item.user && @item.quantity.positive?
+          - if user_signed_in? && current_user != @item.user && @count != "完売しました"
                 .level-item.has-icons.control
-                  = link_to item_tickets_path(@item), class:"button is-primary is-outlined" do
+                  = link_to new_item_ticket_path(@item), class:"button is-primary is-outlined" do
                     span.fas.fa-shopping-cart
-    - if current_user == @item.user && @item.quantity == @initial_quantity
+    - if current_user == @item.user && @count == @item.quantity
       .card-footer.level
           .level-left.has-icons-left.control
             = link_to edit_item_path(@item),class:"button is-success" do
