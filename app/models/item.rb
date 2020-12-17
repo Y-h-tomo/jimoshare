@@ -5,7 +5,7 @@ class Item < ApplicationRecord
   belongs_to_active_hash :condition
   belongs_to :user
   has_one_attached :image
-  has_many :tickets,optional: true
+  has_many :tickets, dependent: :destroy
 
   with_options presence: true do
     validates :name, length: { maximum: 40 }

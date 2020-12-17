@@ -18,13 +18,12 @@ class ItemsController < ApplicationController
 
   def show
     set_item
-    count = @item.quantity - @item.tickets.count
-    @count = if count > 0
-               count
-               @item.quantity = count
+    @initial_quantity = @item.quantity
+    item_quantity = @item.quantity - @item.tickets.count
+    @item.quantity = item_quantity
+    @count = if @item.quantity.positive?
+               item_quantity
              else
-               @item.quantity = 0
-               @item.save
                '完売しました'
              end
   end

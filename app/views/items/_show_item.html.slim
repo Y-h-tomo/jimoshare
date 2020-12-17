@@ -42,10 +42,11 @@
           .level-item.has-icons.control
             = link_to :back, class:"button is-dark is-outlined" do
               span.fas.fa-undo
-          .level-item.has-icons.control
-            = link_to item_tickets_path(@item), class:"button is-primary is-outlined" do
-              span.fas.fa-shopping-cart
-    - if current_user == @item.user && @count == @item.quantity
+          - if user_signed_in? && current_user != @item.user && @item.quantity.positive?
+                .level-item.has-icons.control
+                  = link_to item_tickets_path(@item), class:"button is-primary is-outlined" do
+                    span.fas.fa-shopping-cart
+    - if current_user == @item.user && @item.quantity == @initial_quantity
       .card-footer.level
           .level-left.has-icons-left.control
             = link_to edit_item_path(@item),class:"button is-success" do
