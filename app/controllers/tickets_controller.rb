@@ -1,7 +1,6 @@
 class TicketsController < ApplicationController
-
   def index
-    @tickets = Ticket.where(user_id: current_user.id,receipt: 0)
+    @tickets = Ticket.where(user_id: current_user.id, receipt: 0)
   end
 
   def new
@@ -32,24 +31,22 @@ class TicketsController < ApplicationController
   end
 
   def show
-    @ticket =  Ticket.find(params[:id])
+    @ticket = Ticket.find(params[:id])
   end
 
   def receipt
-    @items  = Item.where(user_id:current_user.id)
+    @items  = Item.where(user_id: current_user.id)
   end
 
   def confirmation
-    @ticket =  Ticket.find(params[:item_id])
-    @ticket.receipt  = 1
+    @ticket = Ticket.find(params[:item_id])
+    @ticket.receipt = 1
     if @ticket.save
       redirect_to root_path
     else
       render :receipt
     end
   end
-
-
 
   private
 

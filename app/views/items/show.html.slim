@@ -1,9 +1,9 @@
 section.item-form-wrapper
-  .hero.is-medium.is-info.is-bold
+  .hero.is-medium.is-info.is-bold.page-title
     h1.title.form-title
       |商品詳細
   section.columns
-    .column.is-half
+    .column.is-half.item-index
         = render 'show_item'
     .column.is-half.item-index
       = render partial: 'ticket',collection:@tickets

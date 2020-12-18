@@ -24,7 +24,7 @@ class ItemsController < ApplicationController
                @item.quantity
              end
     @count = '完売しました' unless @count.positive?
-    @tickets = Ticket.where(item_id:params[:id])
+    @tickets = Ticket.where(item_id: params[:id])
   end
 
   def edit

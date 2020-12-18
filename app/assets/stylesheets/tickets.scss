@@ -8,3 +8,10 @@
 .ticket-modal {
     background-color: blue;
 }
+
+.ticket-form-wrapper {
+    padding-top: 7vh;
+    height: 120vh;
+    background-image: image-url("ticket-bg.png");
+    overflow: scroll;
+}
