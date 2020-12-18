@@ -5,7 +5,10 @@ Rails.application.routes.draw do
   }
 
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
-  root 'home#index'
+
+  post '/homes/guest_sign_in', to: 'homes#new_guest'
+  post '/homes/guest2_sign_in', to: 'homes#new_guest2'
+  root 'homes#index'
   get 'items/search'
   resources :users, only: %i[edit update show]
   get 'items/stock'

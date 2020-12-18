@@ -23,7 +23,9 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
       .navbar-item
         .buttons
           - if user_signed_in?
-            = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"button is-danger"
+              = link_to "ログアウト", destroy_user_session_path, method: :delete, class:"button is-danger"
           - else
-            = link_to "新規登録", new_user_registration_path,class:"button is-primary"
-            = link_to "ログイン", new_user_session_path, class:"button is-light"
+              = link_to 'ゲストログイン（出品用）', homes_guest_sign_in_path, method: :post,class:"button is-success"
+              = link_to 'ゲストログイン（購入用）', homes_guest2_sign_in_path, method: :post,class:"button is-info"
+              = link_to "新規登録", new_user_registration_path,class:"button is-primary"
+              = link_to "ログイン", new_user_session_path, class:"button is-light"
