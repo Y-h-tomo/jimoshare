@@ -51,29 +51,19 @@
 - has_many :comments
 - has_many :tickets
 
-## orders テーブル
-
-| Column | Type       | Options                        |
-| ------ | ---------- | ------------------------------ |
-| user   | references | null: false, foreign_key: true |
-| ticket | references | null: false, foreign_key: true |
-
-### Association
-
-- belongs_to :user
-- belongs_to :ticket
-
 ## tickets テーブル
 
 | Column | Type       | Options                        |
 | ------ | ---------- | ------------------------------ |
+| user   | references | null: false, foreign_key: true |
 | item   | references | null: false, foreign_key: true |
 | number | integer    | null: false                    |
+| aceipt | boolean    |                                |
 
 ### Association
 
 - belongs_to :item
-- has_one :orders
+- belongs_to :user
 
 ## favorites テーブル
 
