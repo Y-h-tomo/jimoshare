@@ -1,4 +1,4 @@
-  button.open.button.is-large.level.has-background-black.has-text-light
+  button.open.button.is-large.level.has-background-grey.has-text-light
     p.level-left.item-card-title
       = @ticket.item.name
     span.icon
@@ -19,6 +19,11 @@
         p.image
           = image_tag @ticket.item.image,alt:"#{@ticket.item.name}の画像"
         span.icon.has-text-info
+          i.fas.fa-align-left
+        p.card-description
+          = @ticket.item.description
+      footer.modal-card-foot
+        span.icon.has-text-info
           i.fas.fa-user
         p.card-description
           = @ticket.item.user.nickname
@@ -26,8 +31,3 @@
           i.fas.fa-map-marker-alt
         p.card-description
           = @ticket.item.contact_location
-      footer.modal-card-foot
-        span.icon.has-text-info
-          i.fas.fa-align-left
-        p.card-description
-          = @ticket.item.description
