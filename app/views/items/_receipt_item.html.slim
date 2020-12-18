@@ -1,0 +1,14 @@
+  .card.item-info-card
+    .card-header
+      .card-header-title.item-card-title
+        span.card-header-icon.tag.is-warning.is-light
+          |商品名
+        = receipt_item.name
+    .card-image.level.index-image
+      figure.image
+        = image_tag  receipt_item.image,alt:"#{ receipt_item.name}の画像"
+    .card-footer.control.has-icons-left
+      = link_to item_path(receipt_item),class:"button is-info is-small" do
+        span.has-text-white
+          i.fas.fa-eye
+          |詳細へ

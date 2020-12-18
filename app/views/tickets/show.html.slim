@@ -1,0 +1,16 @@
+javascript:
+  $(document).ready(function() {
+    $(".open").on("click", function() {
+      $("div.modal").addClass("is-active");
+    })
+
+    $(".close, div.modal-background").on("click", function() {
+      $("div.modal").removeClass("is-active");
+    })
+  });
+section.item-form-wrapper
+  .hero.is-medium.is-danger.is-bold
+    h1.title.form-title
+      |チケットナンバーチェック
+  .container
+      = render 'show_ticket'

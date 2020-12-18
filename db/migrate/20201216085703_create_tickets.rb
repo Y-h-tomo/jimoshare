@@ -4,6 +4,7 @@ class CreateTickets < ActiveRecord::Migration[6.0]
       t.references  :user ,null: false, foreign_key: true
       t.references :item,null: false, foreign_key: true
       t.integer   :number, null: false
+      t.boolean :receipt, default: false
       t.timestamps
     end
   end

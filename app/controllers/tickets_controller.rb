@@ -1,19 +1,23 @@
 class TicketsController < ApplicationController
-  before_action :set_item,except: %i[index destroy]
-  before_action :set_tickets, except: %i[index destroy]
-  before_action :over_ban, except: %i[index destroy]
-  before_action :item_user_ban, except: %i[index destroy]
 
   def index
-    @tickets = Ticket.where(user_id: current_user.id)
+    @tickets = Ticket.where(user_id: current_user.id,receipt: 0)
   end
 
   def new
+    set_item
+    set_tickets
+    item_user_ban
+    over_ban
     @ticket = Ticket.new
     @tickets = Ticket.where(item_id: @item.id)
   end
 
   def create
+    set_item
+    set_tickets
+    item_user_ban
+    over_ban
     num = Faker::Number.number(digits: 6)
     @ticket = Ticket.new(
       number: num,
@@ -27,8 +31,25 @@ class TicketsController < ApplicationController
     end
   end
 
-  def destroy
+  def show
+    @ticket =  Ticket.find(params[:id])
   end
+
+  def receipt
+    @items  = Item.where(user_id:current_user.id)
+  end
+
+  def confirmation
+    @ticket =  Ticket.find(params[:item_id])
+    @ticket.receipt  = 1
+    if @ticket.save
+      redirect_to root_path
+    else
+      render :receipt
+    end
+  end
+
+
 
   private
 
@@ -47,10 +68,12 @@ class TicketsController < ApplicationController
   def over_ban
     redirect_to items_path if @item.tickets.count > @item.quantity
   end
+
   def user_check
     out_user = Ticket.find_by(item_id: params[:item_id])
     redirect_to items_path if current_user == out_user
   end
+
   def random_number_generator(n)
     ''.tap { |s| n.times { s << rand(0..9).to_s } }
   end

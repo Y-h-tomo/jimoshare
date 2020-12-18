@@ -55,6 +55,7 @@ ActiveRecord::Schema.define(version: 2020_12_16_085703) do
     t.bigint "user_id", null: false
     t.bigint "item_id", null: false
     t.integer "number", null: false
+    t.boolean "receipt", default: false
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
     t.index ["item_id"], name: "index_tickets_on_item_id"

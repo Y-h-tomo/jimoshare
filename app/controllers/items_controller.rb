@@ -24,6 +24,7 @@ class ItemsController < ApplicationController
                @item.quantity
              end
     @count = '完売しました' unless @count.positive?
+    @tickets = Ticket.where(item_id:params[:id])
   end
 
   def edit
@@ -67,16 +68,9 @@ class ItemsController < ApplicationController
     end
   end
 
-def buy
-  @item = Item.find(params[:item_id])
-  @count = if @item.tickets.count.positive?
-    @item.quantity - @item.tickets.count
-  else
-    @item.quantity
+  def receipt
+    @receipt_items = Item.where(user_id: current_user, stock: false)
   end
-  render json:{ post: post }
-@count = '完売しました' unless @count.positive?
-end
 
   private
 

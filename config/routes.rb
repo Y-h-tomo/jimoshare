@@ -9,11 +9,12 @@ Rails.application.routes.draw do
   get 'items/search'
   resources :users, only: %i[edit update show]
   get 'items/stock'
-  resources :tickets,only: :index
+  get  'items/receipt'
+  resources :tickets,only: %i[index show]
   resources :items do
+    post  'tickets/confirmation'
     post 'stock_out'
-    get  'items/buy'
-    resources :tickets,except: :index
+    resources :tickets,except: %i[index show]
   end
 
 end
