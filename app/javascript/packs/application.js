@@ -8,6 +8,7 @@ require("@rails/ujs").start();
 require("turbolinks").start();
 require("@rails/activestorage").start();
 require("../bulma");
+// require("../slick");
 // require("tickets/ban");
 // require("tickets/ticket");
 // require("../search");

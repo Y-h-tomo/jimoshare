@@ -43,5 +43,13 @@ $tag-delete-margin: 5px;
 .page-title {
     position: fixed;
     top: 3.7em;
+    left: 0.5em;
     z-index: 20;
+}
+
+.user-item {
+    position: fixed;
+    top: 3.7em;
+    z-index: 20;
+    right: 0.5em;
 }

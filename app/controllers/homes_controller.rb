@@ -17,6 +17,7 @@ class HomesController < ApplicationController
     sign_in user
     redirect_to root_path, notice: 'ゲストユーザーとしてログインしました。'
   end
+
   def new_guest2
     user = User.find_or_create_by!(
       email: 'guest2@example.com',
