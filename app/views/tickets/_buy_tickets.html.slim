@@ -2,7 +2,7 @@
   .container
     .field
       = render 'shared/error_messages', model: f.object
-    .control.has-icons-left.hero
-      = f.submit "チケット購入"
+    .field.control.has-icons-left.hero
       span.icon
-        i.fas.fa-ticket-alt.has-text-info.is-large
+        i.fas.fa-ticket-alt.has-text-danger.is-large
+      = f.submit "チケット購入する"

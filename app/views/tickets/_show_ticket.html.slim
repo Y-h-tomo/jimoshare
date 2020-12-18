@@ -1,21 +1,33 @@
-  button.open.button.is-large.level
-    p.level-left
+  button.open.button.is-large.level.has-background-success
+    p.level-left.item-card-title
       = @ticket.item.name
     span.icon
       i.fas.fa-ticket-alt.is-large
     p.level-right.is-size-7
+      |期限
       = @ticket.item.deadline
   .modal
     .modal-background
     .modal-card
       header.modal-card-head
-        p.modal-card-title
+        p.modal-card-title.is-size-1
           = @ticket.number
+        .is-size-6.has-text-danger
+          |出品者はチケット受け取り処理を行ってください
         button.close.delete[aria-label="close"]
       section.modal-card-body
-        p.image.is-280x280
+        p.image
           = image_tag @ticket.item.image,alt:"#{@ticket.item.name}の画像"
+        span.icon.has-text-info
+          i.fas.fa-user
+        p.card-description
+          = @ticket.item.user.nickname
+        span.icon.has-text-info
+          i.fas.fa-map-marker-alt
+        p.card-description
+          = @ticket.item.contact_location
       footer.modal-card-foot
-        button.button.is-success
-        a[href="#"]
-          | リンク
+        span.icon.has-text-info
+          i.fas.fa-align-left
+        p.card-description
+          = @ticket.item.description

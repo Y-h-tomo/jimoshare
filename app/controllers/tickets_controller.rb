@@ -10,7 +10,7 @@ class TicketsController < ApplicationController
     item_user_ban
     over_ban
     @ticket = Ticket.new
-    @tickets = Ticket.where(item_id: @item.id)
+    @out_tickets = Ticket.where(item_id: @item.id)
   end
 
   def create

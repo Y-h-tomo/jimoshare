@@ -39,3 +39,9 @@ $tag-delete-margin: 5px;
         display: block;
     }
 }
+
+.page-title {
+    position: fixed;
+    top: 3.7em;
+    z-index: 30;
+}
