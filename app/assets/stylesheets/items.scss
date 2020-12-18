@@ -91,3 +91,10 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 .card-tag {
     margin-left: 10px;
 }
+
+.item-test {
+    position: relative;
+    z-index: 20;
+    top: 3em;
+    left: 3em;
+}
