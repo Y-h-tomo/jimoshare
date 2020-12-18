@@ -1,6 +1,8 @@
 class ItemsController < ApplicationController
   def index
-    @items = Item.where(stock: 0).order('created_at DESC')
+    items = Item.where(stock: 0).order('created_at DESC')
+    @items = params[:category_id].present? ? Category.find(params[:category_id]).items : items
+    @items = params[:prefecture_id].present? ? Prefecture.find(params[:prefecture_id]).items : items
   end
 
   def new

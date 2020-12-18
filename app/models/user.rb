@@ -18,7 +18,6 @@ class User < ApplicationRecord
   end
   validates :prefecture_id, numericality: { other_than: 1 }
 
-
   def update_without_current_password(params, *options)
     params.delete(:current_password)
 
@@ -31,5 +30,4 @@ class User < ApplicationRecord
     clean_up_passwords
     result
   end
-
 end

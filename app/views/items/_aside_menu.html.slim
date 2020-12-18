@@ -1,25 +1,24 @@
 aside.menu.column.is-2.is-narrow-mobile.is-fullheight.section.item-aside-menu
-  p.menu-label.is-size-3
+  p.menu-label.is-size-3.has-text-light
     |  商品一覧
   p.menu-label.is-size-5
     =render 'sort_form'
-  p.menu-label.is-size-5
+  p.menu-label.is-size-5.has-text-light
     |フィルター
   ul.menu-list
-    li
-      a
-        | 分類選択
-    li
-      a
-        | エリア選択
+    =render 'tag_form'
+    =render 'aria_form'
   - if user_signed_in?
-    p.menu-label.is-size-5
+    p.menu-label.is-size-5.has-text-light
       |  マイページリンク
     ul.menu-list
       li
-        = link_to "出品する",new_item_path
+        = link_to "ストック一覧",items_stock_path(current_user),class:"has-text-info"
       li
-        a
-          |  チケット一覧
+        = link_to "出品する",new_item_path,class:"has-text-warning"
       li
-        = link_to "#{current_user.nickname}さん", user_path(current_user)
+        = link_to " チケット一覧",tickets_path,class:"has-text-success"
+      li
+        = link_to "チケット受け取り",items_receipt_path(current_user),class:"has-text-danger"
+      li
+        = link_to "#{current_user.nickname}さん", user_path(current_user),class:"has-text-info"
