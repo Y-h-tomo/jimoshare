@@ -1,0 +1,13 @@
+- if current_user == @item.user && ticket.receipt == false
+  = form_with url: item_tickets_confirmation_path(ticket),class: 'stock-form level', local: true do |f|
+    .container.control.has-icons.has-text-light
+        span.icon
+          i.fas.fa-ticket-alt.is-large
+        span.is-size-3
+          =ticket.number
+        span.icon
+          i.fas.fa-user.is-large
+        =ticket.user.nickname
+        .field
+          lavel.has-text-white.hero.is-large
+            = f.submit "受け取る"

@@ -77,3 +77,5 @@ gem "aws-sdk-s3", require: false
 gem 'pry-rails'
 # 検索機能用
 gem 'ransack'
+# #非同期通信用
+# gem 'jquery-rails'

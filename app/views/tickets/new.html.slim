@@ -1,0 +1,10 @@
+section.item-form-wrapper
+  .hero.is-medium.is-dark.is-bold
+    h1.title.form-title
+      |購入する
+  = render 'buy_tickets'
+  .hero.is-medium.is-success.is-bold
+    h1.title.form-title
+      |販売済みチケット
+  .section.item-index
+    = render partial:'out_ticket',collection:@out_tickets

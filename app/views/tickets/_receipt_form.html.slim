@@ -1,0 +1,8 @@
+= form_with model: @ticket, url: items_path, class: 'item-form level', local: true do |f|
+    .field
+      lavel.has-text-white
+        |ナンバー入力
+      .control.has-icons-left
+        = f.number_field :number, class:"input", id:"number"
+        span.icon.is-small.is-left
+          i.fas.fa-sort-numeric-up-alt

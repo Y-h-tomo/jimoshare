@@ -33,13 +33,14 @@
           = f.text_field :price, class:"input", id:"price", placeholder:"価格（1個あたり）",maxlength: "6"
           span.icon.is-small.is-left
             i.fas.fa-yen-sign
-      .field
-        lavel.has-text-white
-          |個数（99個以内）
-        .control.has-icons-left
-          = f.number_field :quantity, class:"input", id:"quantity", placeholder:"個数(99個以内)",min:1,max:99
-          span.icon.is-small.is-left
-            i.fas.fa-sort-numeric-up-alt
+      - if @item.stock == true
+        .field
+          lavel.has-text-white
+            |個数（99個以内）
+          .control.has-icons-left
+            = f.number_field :quantity, class:"input", id:"quantity", placeholder:"個数(99個以内)",min:1,max:99
+            span.icon.is-small.is-left
+              i.fas.fa-sort-numeric-up-alt
       .field
         lavel.has-text-white
           |引き渡し期限日時(現在より1年以内)
