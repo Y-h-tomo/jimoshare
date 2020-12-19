@@ -1,24 +1,24 @@
 aside.menu.column.is-2.is-narrow-mobile.is-fullheight.section.item-aside-menu
-  p.menu-label.is-size-3.has-text-light
-    |  商品一覧
-  p.menu-label.is-size-5
+  p.menu-label.is-size-6.has-text-black-ter
+    |商品名検索
+    =render 'search_form'
+  p.menu-label.is-size-6.has-text-black-ter
+    |絞り込み検索
+    =render 'filter_form'
+    = link_to "検索リセット",items_path,class:"button is-danger is-outlined is-small"
+  p.menu-label.is-size-6.has-text-black-ter
+    |ソート
     =render 'sort_form'
-  p.menu-label.is-size-5.has-text-light
-    |フィルター
   ul.menu-list
-    =render 'tag_form'
-    =render 'aria_form'
   - if user_signed_in?
-    p.menu-label.is-size-5.has-text-light
-      |  マイページリンク
-    ul.menu-list
-      li
-        = link_to "ストック一覧",items_stock_path(current_user),class:"has-text-info"
-      li
-        = link_to "出品する",new_item_path,class:"has-text-warning"
-      li
-        = link_to " チケット一覧",tickets_path,class:"has-text-success"
-      li
-        = link_to "チケット受け取り",items_receipt_path(current_user),class:"has-text-danger"
-      li
-        = link_to "#{current_user.nickname}さん", user_path(current_user),class:"has-text-info"
+      .dropdown.is-hoverable
+        .dropdown-trigger
+          .button.is-small aria-haspopup="true" aria-controls="dropdown-menu3"
+            span
+              |マイページリンク
+        .dropdown-menu
+          = link_to "ストック一覧",items_stock_path(current_user),class:"has-text-info dropdown-item"
+          = link_to "出品する",new_item_path,class:"has-text-warning dropdown-item"
+          = link_to " チケット一覧",tickets_path,class:"has-text-success dropdown-item"
+          = link_to "チケット受け取り",items_receipt_path(current_user),class:"has-text-danger dropdown-item"
+          = link_to "#{current_user.nickname}さん", user_path(current_user),class:"has-text-info dropdown-item"

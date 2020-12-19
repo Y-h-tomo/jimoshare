@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  get 'comments/new'
   devise_for :users,controllers: {
     registrations: 'users/registrations',
     sessions: 'users/sessions'
@@ -10,6 +11,7 @@ Rails.application.routes.draw do
   post '/homes/guest2_sign_in', to: 'homes#new_guest2'
   root 'homes#index'
   get 'items/search'
+  get 'items/sort'
   resources :users, only: %i[edit update show]
   get 'items/stock'
   get  'items/receipt'
@@ -17,6 +19,7 @@ Rails.application.routes.draw do
   resources :items do
     post  'tickets/confirmation'
     post 'stock_out'
+    resources :comments,only: %i[create]
     resources :tickets,except: %i[index show]
   end
 

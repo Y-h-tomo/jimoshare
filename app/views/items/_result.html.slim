@@ -1,0 +1,43 @@
+  .card.item-info-card
+    .card-header
+      .card-header-title.item-card-title
+        span.card-header-icon.tag.is-warning.is-light
+          |商品名
+        = result.name
+    .tags.has-addons
+      span.tag.icon
+        i.fas.fa-folder
+      span.tag.is-info.is-light
+        = result.category.name
+    .tags.has-addons
+      span.tag.icon
+        i.fas.fa-map-marked-alt
+      span.tag.is-success.is-light
+        = result.prefecture.name
+    .card-image.level.index-image
+      figure.image
+        = image_tag result.image,alt:"#{result.name}の画像"
+    .card-content
+          span.tag.card-info
+            | 価格:
+          = result.price
+          br
+          span.tag.card-info
+            | 個数:
+          =  result.quantity - result.tickets.count
+          br
+          span.tag.card-info
+            | 期限日時:
+          = result.deadline
+    - if result.tickets.count >= result.quantity
+      .card-footer.control.has-icons-left
+        p
+          |完売しました
+    - else
+      .card-footer.control.has-icons-left
+        = link_to result_path(item),class:"button is-info is-small" do
+          span.has-text-white
+            i.fas.fa-eye
+            |詳細へ
+
+

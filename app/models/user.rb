@@ -8,7 +8,7 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :tickets, dependent: :destroy
 
-  # PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
+  PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   VALID_PHONE_NUBER_REGEX = /\A0+[0-9]+0+\d{7,8}\z/.freeze
 
   with_options presence: true do

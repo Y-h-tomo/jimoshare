@@ -11,7 +11,7 @@ require("../bulma");
 // require("../slick");
 // require("tickets/ban");
 // require("tickets/ticket");
-// require("../search");
+require("../search");
 
 import "@fortawesome/fontawesome-free/js/all";
 // Uncomment to copy all static images under ../images to the output folder and reference

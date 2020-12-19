@@ -54,6 +54,9 @@ group :development do
 # 以下、追加gem
 # コードチェック用
   gem 'rubocop', require: false
+    gem "rubocop-performance", require: false
+  gem "rubocop-rails", require: false
+  gem "rubocop-rspec"
 end
 
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
@@ -78,4 +81,4 @@ gem 'pry-rails'
 # 検索機能用
 gem 'ransack'
 # #非同期通信用
-# gem 'jquery-rails'
+gem 'jquery-rails'
