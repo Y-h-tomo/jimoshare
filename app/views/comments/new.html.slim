@@ -1,9 +1,36 @@
-h3
-    | mini_talk_app
-= form_with model: @comment do |f|
-  = f.text_field :text
-  = f.submit '送信'
+section.item-form-wrapper
+  .hero.is-medium.is-success.is-bold.page-title
+    h1.title.form-title
+      |商品へのコメント
+  .back-icon
+    = link_to :back, class:"button is-dark is-outlined is-small" do
+      span.fas.fa-undo
+  .section.level
+    .field.level-item
+      = render 'show_item'
+    .field.level-item
+      = form_with model: @comment, url: item_comments_path do |f|
+        lavel.has-text-dark
+          |コメント投稿
+        .control.has-icons-left.comment-form
+          = f.text_area :text, class:"input textarea is-primary", id:"text", placeholder:"コメント投稿(200文字以内)",maxlength: "200"
+          span.icon.is-small.is-left
+            i.fas.fa-comment
+          = f.submit '送信',class:"button is-primary is-outlined"
+  .section.comment-index
+    - @comments.each do |comment|
+        .card.comment-card
+            .card-header-title
+              span.card-header-icon.tag.is-info.is-light
+                  = comment.id
+              - if @item.user == comment.user
+                span.card-header-icon.tag.is-danger.is-light
+                    = "#{comment.user.nickname}さん"
+              - else
+                span.card-header-icon.tag.is-warning.is-light
+                    = "#{comment.user.nickname}さん"
+            .card-content.card-description
+                  = comment.text
+            .card-footer.is-size-7
+                  = comment.created_at
 
-#comments
-    - @comments.reverse_each do |comment|
-      = message.text

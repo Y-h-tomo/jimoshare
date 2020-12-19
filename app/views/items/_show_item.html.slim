@@ -1,4 +1,4 @@
-.container
+
   .card.item-show-card
     .card-header
       span.card-header-icon.tag.is-warning.is-light
@@ -16,8 +16,12 @@
         = @item.prefecture.name
       .card-image.level
         figure.image
-          = image_tag @item.image,alt:"#{@item.name}の画像"
+          = image_tag @item.image.variant(resize: '500x500'),alt:"#{@item.name}の画像"
       .card-content
+        span.tag.card-info
+          | 出品者:
+        = @item.user.nickname
+        br
         span.tag.card-info
           | 価格:
         = @item.price
@@ -39,6 +43,9 @@
       .content
         = @item.contact_location
       .card-footer.level
+          .level-item.has-icons.control
+            = link_to new_item_comment_path(@item),class:"button is-success is-outlined" do
+              span.fas.fa-comment
           .level-item.has-icons.control
             = link_to :back, class:"button is-dark is-outlined" do
               span.fas.fa-undo
