@@ -1,0 +1,9 @@
+h3
+    | mini_talk_app
+= form_with model: @comment do |f|
+  = f.text_field :text
+  = f.submit '送信'
+
+#comments
+    - @comments.reverse_each do |comment|
+      = message.text

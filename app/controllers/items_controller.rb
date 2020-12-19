@@ -3,11 +3,11 @@ class ItemsController < ApplicationController
 
   def index
     @q = Item.ransack(params[:q])
-    if (params[:q]).present?
-    @items = @q.result(distinct: true).where(stock: 0).order('created_at DESC')
-    else
-    @items = Item.where(stock: 0).order('created_at DESC')
-    end
+    @items = if params[:q].present?
+               @q.result(distinct: true).where(stock: 0).order('created_at DESC')
+             else
+               Item.where(stock: 0).order('created_at DESC')
+             end
   end
 
   def new
