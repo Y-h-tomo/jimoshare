@@ -1,8 +1,13 @@
 class ItemsController < ApplicationController
+  # before_action :search_item
+
   def index
-    items = Item.where(stock: 0).order('created_at DESC')
-    @items = params[:category_id].present? ? Category.find(params[:category_id]).items : items
-    @items = params[:prefecture_id].present? ? Prefecture.find(params[:prefecture_id]).items : items
+    @q = Item.ransack(params[:q])
+    if (params[:q]).present?
+    @items = @q.result(distinct: true).where(stock: 0).order('created_at DESC')
+    else
+    @items = Item.where(stock: 0).order('created_at DESC')
+    end
   end
 
   def new
@@ -52,8 +57,12 @@ class ItemsController < ApplicationController
   end
 
   def search
-    selection = params[:keyword]
-    @items = Item.sort(selection)
+    # @results = @p.result.includes(:category_id)
+  end
+
+  def sort
+    # selection = params[:keyword]
+    # @items = Item.sort(selection)
   end
 
   def stock
@@ -95,5 +104,13 @@ class ItemsController < ApplicationController
       :stock,
       :limit
     ).merge(user_id: current_user.id)
+  end
+
+  def search_item
+    @p = Item.ransack(params[:q]) # 検索オブジェクトを生成
+  end
+
+  def set_item_column
+    @item_name = Item.select('name').distinct  # 重複なくnameカラムのデータを取り出す
   end
 end

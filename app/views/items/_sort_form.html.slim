@@ -1,8 +1,18 @@
-.field.item-sort
-  = form_with model: @item, url: items_search_path, method: :get, local: true do |f|
-    = f.select :keyword, [ ['新着順', 'new'],
-                              ['個数が多い順', 'many'],
-                              ['価格が安い順', 'price'],
-                              ['期限が近い順', 'limit'],
-                            ]
-    = f.submit "並び替え" ,class:"button is-link is-small is-light"
+.field.hero
+  = sort_link(@q, :deadline, "期限順") do
+    .button.is-warning.is-outlined.is-small
+      span.fas.fa-calendar-day
+      | 期限順
+  = sort_link(@q, :price, "価格順") do
+    .button.is-primary.is-outlined.is-small
+      span.fas.fa-yen-sign
+      | 価格順
+  = sort_link(@q, :quantity, "個数順") do
+    .button.is-success.is-outlined.is-small
+      span.fas.fa-sort-numeric-up-alt
+      | 個数順
+  = sort_link(@q, :created_at, "新着順") do
+    .button.is-info.is-outlined.is-small
+      span.fas.fa-clock
+      | 新着順
+

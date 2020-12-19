@@ -2,5 +2,8 @@ section.stock-form-wrapper
   .hero.is-medium.is-info.is-bold.page-title
     h1.title.form-title
       |ストック一覧
+  .back-icon
+    = link_to :back, class:"button is-dark is-outlined is-small" do
+      span.fas.fa-undo
   .section.item-index
     =render partial:'item',collection:@items

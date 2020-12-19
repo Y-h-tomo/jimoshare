@@ -29,18 +29,19 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     background-color: $jimo-bg;
 }
 
+.form-control {
+    height: 2em;
+}
+
 .item-index {
-    margin-top: 5em;
+    margin-top: 2em;
     display: flex;
     flex-flow: row wrap;
 }
 
 .item-aside-menu {
-    background-color: $jimo-bg;
-}
-
-.item-sort {
-    width: 100%;
+    padding: 1em;
+    margin-top: 2em;
 }
 
 .item-info-card {

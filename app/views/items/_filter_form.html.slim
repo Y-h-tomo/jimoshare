@@ -1,0 +1,10 @@
+.field
+  = search_form_for @q do |f|
+      = f.label :category_id,"分類別"
+      br
+      = f.collection_select :category_id_eq,Category.all, :id, :name,{prompt: '分類で絞り込み',class: 'form-control'}
+      br
+      = f.label :prefecture_id,"地域別"
+      br
+      = f.collection_select :prefecture_id_eq,Prefecture.all, :id, :name,{prompt: '地域で絞り込み',class: 'form-control'}
+      = f.submit '検索' ,class:"button is-link is-outlined is-small hero "

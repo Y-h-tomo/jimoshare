@@ -1,3 +1,0 @@
-.field.item-sort
-  = form_tag items_path, method: :get do
-    = select_tag :category_id,options_from_collection_for_select(Category.all, :id, :name, params[:category_id]),{prompt: '分類で絞り込み',class: 'form-control posts__select',onchange: 'submit(this.form);'}
