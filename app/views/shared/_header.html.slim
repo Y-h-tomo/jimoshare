@@ -15,8 +15,7 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
             = link_to "#{current_user.nickname}さん", user_path(current_user),class:"navbar-item has-text-info"
             .navbar-dropdown
               = link_to "ストック一覧",items_stock_path(current_user),class:"navbar-item"
-              a.navbar-item
-                | お気に入り
+              = link_to "ブックマーク商品一覧",favorites_path(current_user),class:"navbar-item"
               hr.navbar-divider
               = link_to "チケット受け取り",items_receipt_path(current_user),class:"navbar-item"
     .navbar-end

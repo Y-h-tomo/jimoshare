@@ -18,34 +18,43 @@
         figure.image
           = image_tag @item.image.variant(resize: '500x500'),alt:"#{@item.name}の画像"
       .card-content
-        span.tag.card-info
+        span.tag
           | 出品者:
         = @item.user.nickname
         br
-        span.tag.card-info
+        span.tag
           | 価格:
         = @item.price
         br
-        span.tag.card-info
+        span.tag
           | 個数:
         = @count
         br
-        span.tag.card-info
+        span.tag
           | 期限日時:
         = @item.deadline
-    .card-content.card-description
+    .card-content
       span.tag
         | 引き渡し説明・条件
-      .content
+      .content.card-description
         = @item.description
       span.tag
         | 引き渡し場所
-      .content
+      .content.card-description
         = @item.contact_location
       .card-footer.level
           .level-item.has-icons.control
             = link_to new_item_comment_path(@item),class:"button is-success is-outlined" do
               span.fas.fa-comment
+          - unless current_user == @item.user
+            - if @item.favorites_by?(current_user)
+              .level-item.has-icons.control
+                = link_to item_favorites_path(@item),method: :delete,class:"button is-link" do
+                  span.fas.fa-bookmark
+            - else
+              .level-item.has-icons.control
+                = link_to item_favorites_path(@item),method: :post,class:"button is-link is-outlined" do
+                  span.fas.fa-bookmark
           .level-item.has-icons.control
             = link_to :back, class:"button is-dark is-outlined" do
               span.fas.fa-undo

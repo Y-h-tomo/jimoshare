@@ -6,7 +6,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :tickets
-  has_many :comments
+  has_many :favorites, dependent: :destroy
+  has_many :comments, dependent: :destroy
+  has_many :favorite_items, through: :favorites, source: :item
 
   with_options presence: true do
     validates :name, length: { maximum: 40 }
@@ -30,28 +32,7 @@ class Item < ApplicationRecord
     errors.add(:deadline, 'は今日以降のものを選択してください') if deadline < Date.today
   end
 
-  # def self.sort(selection)
-  #   case selection
-  #   when 'new'
-  #     all.order(created_at: :DESC)
-  #   when 'many'
-  #     all.order(quantity: :DESC)
-  #   when 'price'
-  #     all.order(price: :ASC)
-  #   when 'limit'
-  #     all.order(deadline: :ASC)
-  #   end
-  # end
-  # def self.search(selection)
-  #   case selection
-  #   when 'new'
-  #     all.order(created_at: :DESC)
-  #   when 'many'
-  #     all.order(quantity: :DESC)
-  #   when 'price'
-  #     all.order(price: :ASC)
-  #   when 'limit'
-  #     all.order(deadline: :ASC)
-  #   end
-  # end
+  def favorites_by?(user)
+    favorites.where(user_id: user.id).exists?
+  end
 end

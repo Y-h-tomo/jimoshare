@@ -1,0 +1,9 @@
+section.item-form-wrapper
+  .hero.is-medium.is-link.is-bold.page-title
+    h1.title.form-title
+      |ブックマーク商品一覧
+  .back-icon
+    = link_to :back, class:"button is-dark is-outlined is-small" do
+      span.fas.fa-undo
+  .section.item-index
+    =render partial:'favorite',collection:@favorites

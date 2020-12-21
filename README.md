@@ -1,3 +1,7 @@
+# jimoshare の開発環境
+
+![jimoshareの開発環境](app/assets/images/jimoshare-composition.png)
+
 # jimoshare の ER 図
 
 ![jimoshareのER図](app/assets/images/jimoshare.png)

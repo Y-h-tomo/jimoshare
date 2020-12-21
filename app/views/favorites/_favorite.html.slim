@@ -3,33 +3,33 @@
       .card-header-title.item-card-title
         span.card-header-icon.tag.is-warning.is-light
           |商品名
-        = item.name
+        = favorite.item.name
     span.tags.has-addons
       span.tag.is-info.is-light
-        = item.category.name
+        = favorite.item.category.name
       span.tag.is-success.is-light
-        = item.prefecture.name
+        = favorite.item.prefecture.name
     .card-image.level.index-image.tags
       figure.image
-        = image_tag item.image.variant(resize: '200x200'),alt:"#{item.name}の画像"
+        = image_tag favorite.item.image.variant(resize: '200x200'),alt:"#{favorite.item.name}の画像"
       span.tag.has-icons-left.is-size-6.is-primary.is-light
           i.fas.fa-yen-sign.has-text-danger.yen-icon
-          = item.price
+          = favorite.item.price
       span.tag.is-warning.is-light
-        = item.deadline
+        = favorite.item.deadline
         |まで
-    - if item.tickets.count >= item.quantity
+    - if favorite.item.tickets.count >= favorite.item.quantity
       .card-footer.control.has-icons-left
         p
           |完売しました
     - else
       .card-footer.control.has-icons-left
-        = link_to item_path(item),class:"button is-info is-small" do
+        = link_to item_path(favorite.item),class:"button is-info is-small" do
           span.has-text-white
             i.fas.fa-eye
             |詳細へ
         span.tag
           | 個数:
-          =  item.quantity - item.tickets.count
+          =  favorite.item.quantity - favorite.item.tickets.count
 
 
