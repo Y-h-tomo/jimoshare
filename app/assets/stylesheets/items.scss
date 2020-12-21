@@ -14,6 +14,8 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     height: 120vh;
     background-image: image-url("stock_bg.png");
     overflow: scroll;
+    background-size: cover;
+    background-position: center;
 }
 
 .stock-form {

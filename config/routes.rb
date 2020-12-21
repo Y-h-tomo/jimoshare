@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   resources :items do
     post  'tickets/confirmation'
     post 'stock_out'
+    resources :favorites,only: %i[new create]
     resources :comments,only: %i[new create]
     resources :tickets,except: %i[index show]
   end

@@ -12,8 +12,11 @@ section.ticket-form-wrapper
   .hero.is-medium.is-danger.is-bold.page-title.has-icons-left
     h1.title.form-title
       |チケットナンバーチェック
-  .back-icon
+  .back-icon.level
     = link_to :back, class:"button is-dark is-outlined is-small" do
       span.fas.fa-undo
-  .section.item-index
+    .ticket-check
+      p
+        |タッチでチケットが拡大します
+  .section.ticket-index
       = render 'show_ticket'
