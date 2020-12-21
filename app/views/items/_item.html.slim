@@ -12,6 +12,9 @@
     .card-image.level.index-image.tags
       figure.image
         = image_tag item.image.variant(resize: '200x200'),alt:"#{item.name}の画像"
+        span.tag.is-light
+          span.fas.fa-heart.has-text-danger
+          = item.likes.count
       span.tag.has-icons-left.is-size-6.is-primary.is-light
           i.fas.fa-yen-sign.has-text-danger.yen-icon
           = item.price
