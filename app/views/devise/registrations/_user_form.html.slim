@@ -1,6 +1,8 @@
 = form_with model: @user, url: user_registration_path, class: 'user-form level', local: true do |f|
   .container
     .field
+      = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
+      = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
       = render 'shared/error_messages', model:  f.object
     .field.must-form
       p.has-text-danger
