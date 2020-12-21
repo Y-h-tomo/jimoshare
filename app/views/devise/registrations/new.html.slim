@@ -2,7 +2,5 @@ section.user-form-wrapper
   .hero.is-medium.is-primary.is-bold.page-title
     h1.title.form-title
       |新規登録
-    h1.title.form-title
-      = link_to 'Facebookで登録', user_facebook_omniauth_authorize_path, method: :post
-      = link_to 'Googleで登録', user_google_oauth2_omniauth_authorize_path, method: :post
+    h1.title
   = render 'user_form'
