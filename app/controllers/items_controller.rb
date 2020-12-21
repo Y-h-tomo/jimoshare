@@ -32,9 +32,7 @@ class ItemsController < ApplicationController
              end
     @count = '完売しました' unless @count.positive?
     @tickets = Ticket.where(item_id: params[:id])
-    if @item.favorites.present?
-    @favorite = Favorite.find_by(item_id:params[:item_id])
-    end
+    @favorite = Favorite.find_by(item_id: params[:item_id]) if @item.favorites.present?
   end
 
   def edit
@@ -61,7 +59,7 @@ class ItemsController < ApplicationController
 
   def favorites
     @favorites = current_user.favorite_items.includes(:user).recent
-end
+  end
 
   def stock
     @items = Item.where(stock: 1).order('created_at DESC')
