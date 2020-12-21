@@ -3,7 +3,7 @@ services:
   app:
     image: 100544965750.dkr.ecr.ap-northeast-1.amazonaws.com/jimoshare-app-rails
     command: bash -c "bundle exec rails db:migrate && bundle exec rails assets:precompile && bundle exec puma -C config/puma.rb"
-    environment: # 練習なので直書きスタイルだが、実際はdotenvなどを使った方が良いと思う。
+    environment:
       RAILS_ENV: production
       RAILS_SERVE_STATIC_FILES: true
       RAILS_MASTER_KEY: 7b1e2092d7de301aeeb6267d3a89765e
@@ -12,6 +12,10 @@ services:
       DATABASE_PASSWORD: password
       DATABASE_HOST: jimoshare-app-db.cazw7at7vqud.ap-northeast-1.rds.amazonaws.com
       TZ: Japan
+      FACEBOOK_CLIENT_ID: "306119297424542"
+      FACEBOOK_CLIENT_SECRET: "b1aa3cde52c91298db6a7ffa9d8ccc0a"
+      GOOGLE_CLIENT_ID: "1029495452096-c35umsaj9gspf92fgiegb9dgbq322b6s.apps.googleusercontent.com"
+      GOOGLE_CLIENT_SECRET: "1hO1yGua_C1Kc83PDF6Q9_T1"
     working_dir: /jimoshare-app
     logging:
       driver: awslogs
