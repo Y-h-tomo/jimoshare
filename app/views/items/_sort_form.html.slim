@@ -1,4 +1,8 @@
 .field.hero
+  = sort_link(@q, :created_at, "新着順") do
+    .button.is-info.is-outlined
+      span.fas.fa-clock
+      | 新着順
   = sort_link(@q, :deadline, "期限順") do
     .button.is-warning.is-outlined
       span.fas.fa-calendar-day
@@ -11,8 +15,8 @@
     .button.is-success.is-outlined
       span.fas.fa-sort-numeric-up-alt
       | 個数順
-  = sort_link(@q, :created_at, "新着順") do
-    .button.is-info.is-outlined
-      span.fas.fa-clock
-      | 新着順
+  = sort_link(@q, :likes_count, "いいね数順") do
+    .button.is-danger.is-outlined
+      span.fas.fa-heart
+      | いいね数順
 

@@ -8,7 +8,10 @@ class User < ApplicationRecord
   has_many :items, dependent: :destroy
   has_many :tickets, dependent: :destroy
   has_many :favorites, dependent: :destroy
+  has_many :favorite_items, through: :favorites, source: :item
   has_many :comments, dependent: :destroy
+  has_many :likes
+  has_many :user_likes, through: :likes, source: :item
 
   PASSWORD_REGEX = /\A(?=.*?[a-z])(?=.*?\d)[a-z\d]+\z/i.freeze
   VALID_PHONE_NUBER_REGEX = /\A0+[0-9]+0+\d{7,8}\z/.freeze

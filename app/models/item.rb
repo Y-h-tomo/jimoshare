@@ -6,9 +6,9 @@ class Item < ApplicationRecord
   belongs_to :user
   has_one_attached :image
   has_many :tickets
+  has_many :likes
   has_many :favorites, dependent: :destroy
   has_many :comments, dependent: :destroy
-  has_many :favorite_items, through: :favorites, source: :item
 
   with_options presence: true do
     validates :name, length: { maximum: 40 }
@@ -34,5 +34,13 @@ class Item < ApplicationRecord
 
   def favorites_by?(user)
     favorites.where(user_id: user.id).exists?
+  end
+
+  def likes_by?(user)
+    likes.where(user_id: user.id).exists?
+  end
+  ransacker :likes_count do
+    query = '(SELECT COUNT(likes.item_id) FROM likes where likes.item_id = items.id GROUP BY likes.item_id)'
+    Arel.sql(query)
   end
 end

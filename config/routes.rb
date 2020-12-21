@@ -22,6 +22,7 @@ Rails.application.routes.draw do
     post 'stock_out'
     resource :favorites,only: %i[create destroy]
     get :favorites, on: :collection
+    resource :likes,only: %i[create destroy]
     resources :comments,only: %i[new create]
     resources :tickets,except: %i[index show]
   end
