@@ -32,6 +32,9 @@ class ItemsController < ApplicationController
              end
     @count = '完売しました' unless @count.positive?
     @tickets = Ticket.where(item_id: params[:id])
+    if @item.favorites.present?
+    @favorite = Favorite.find_by(item_id:params[:item_id])
+    end
   end
 
   def edit
@@ -56,14 +59,9 @@ class ItemsController < ApplicationController
     end
   end
 
-  def search
-    # @results = @p.result.includes(:category_id)
-  end
-
-  def sort
-    # selection = params[:keyword]
-    # @items = Item.sort(selection)
-  end
+  def favorites
+    @favorites = current_user.favorite_items.includes(:user).recent
+end
 
   def stock
     @items = Item.where(stock: 1).order('created_at DESC')

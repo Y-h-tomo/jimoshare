@@ -1,0 +1,35 @@
+  .card.item-info-card
+    .card-header
+      .card-header-title.item-card-title
+        span.card-header-icon.tag.is-warning.is-light
+          |商品名
+        = favorite.item.name
+    span.tags.has-addons
+      span.tag.is-info.is-light
+        = favorite.item.category.name
+      span.tag.is-success.is-light
+        = favorite.item.prefecture.name
+    .card-image.level.index-image.tags
+      figure.image
+        = image_tag favorite.item.image.variant(resize: '200x200'),alt:"#{favorite.item.name}の画像"
+      span.tag.has-icons-left.is-size-6.is-primary.is-light
+          i.fas.fa-yen-sign.has-text-danger.yen-icon
+          = favorite.item.price
+      span.tag.is-warning.is-light
+        = favorite.item.deadline
+        |まで
+    - if favorite.item.tickets.count >= favorite.item.quantity
+      .card-footer.control.has-icons-left
+        p
+          |完売しました
+    - else
+      .card-footer.control.has-icons-left
+        = link_to item_path(favorite.item),class:"button is-info is-small" do
+          span.has-text-white
+            i.fas.fa-eye
+            |詳細へ
+        span.tag
+          | 個数:
+          =  favorite.item.quantity - favorite.item.tickets.count
+
+
