@@ -82,3 +82,7 @@ gem 'pry-rails'
 gem 'ransack'
 # #非同期通信用
 gem 'jquery-rails'
+#SNSログイン用
+gem 'omniauth-facebook'
+gem 'omniauth-google-oauth2'
+gem "omniauth-rails_csrf_protection"
