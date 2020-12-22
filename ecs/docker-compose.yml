@@ -14,8 +14,8 @@ services:
       TZ: Japan
       FACEBOOK_CLIENT_ID: 306119297424542
       FACEBOOK_CLIENT_SECRET: b1aa3cde52c91298db6a7ffa9d8ccc0a
-      GOOGLE_CLIENT_ID: 1029495452096-c35umsaj9gspf92fgiegb9dgbq322b6s.apps.googleusercontent.com
-      GOOGLE_CLIENT_SECRET: 1hO1yGua_C1Kc83PDF6Q9_T1
+      GOOGLE_CLIENT_ID: 1029495452096-fjh9rr1nqq9t677bvqdk37qpfcdavnak.apps.googleusercontent.com
+      GOOGLE_CLIENT_SECRET: k5iVTqspHQAQN3ujmslcLMuY
     working_dir: /jimoshare-app
     logging:
       driver: awslogs
