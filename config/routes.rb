@@ -25,6 +25,7 @@ Rails.application.routes.draw do
     resource :likes,only: %i[create destroy]
     resources :comments,only: %i[new create]
     resources :tickets,except: %i[index show]
+    get :tickets, on: :collection
   end
 
 end
