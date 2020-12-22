@@ -1,7 +1,7 @@
 = form_with model: @item, url: items_path, class: 'item-form level', local: true do |f|
   .container
     .field
-      = render 'shared/error_messages', model:  f.object
+      = render 'shared/error_messages', model: f.object
     .field.must-form
       p.has-text-danger
         |赤枠部分は入力必須です
@@ -12,11 +12,13 @@
           = f.text_area :name, class:"input", id:"name", placeholder:"商品名(40文字以内)", maxlength:"40"
           span.icon.is-small.is-left
             i.fas.fa-carrot
+      .field id="image-list"
+        = image_tag @item.image.variant(resize: '180x180'), id: 'image' if @item.image.present?
       .field
         lavel.has-text-white
           |商品画像
         .control.has-icons-left
-          = f.file_field :image, class:"input", id:"image",placeholder:"商品画像", autofocus: true
+          = f.file_field :image, class:"input", id:"item_image",placeholder:"商品画像", autofocus: true
           span.icon.is-small.is-left
             i.fas.fa-image
       .field
@@ -28,7 +30,7 @@
             i.fas.fa-align-left
       .field
         lavel.has-text-white
-          |価格（1個あたり）出品後の変更はできません。
+          |価格（1個あたり）
         .control.has-icons-left
           = f.text_field :price, class:"input", id:"price", placeholder:"価格（1個あたり）",maxlength: "6"
           span.icon.is-small.is-left
@@ -75,6 +77,23 @@
           = f.text_field :contact_location, class:"input", id:"password-confirmation", placeholder:"引き渡し場所"
           span.icon.is-small.is-left
             i.fas.fa-map-marker-alt
+      .field.either-form
+        .field
+          lavel.has-text-white.checkbox.has-text-small
+            | ストック状態にする
+            span.icon.is-left
+              i.fas.fa-boxes
+          =  f.check_box  :stock, class:"checkbox", id:"stock"
+          br
+          lavel.has-text-white
+            |(✔︎無しで出品されます)
+        .field
+          lavel.has-text-white
+            | お知らせ日（ストック出品時の機能です）
+          .control.has-icons-left
+            =  f.datetime_field :limit, class:"input", id:"limit"
+            span.icon.is-small.is-left
+              i.fas.fa-bullhorn
     .field.has-text-warning
         h2.form-bottom-text
           |  「

@@ -17,7 +17,7 @@ aside.menu.column.is-2.is-narrow-mobile.is-fullheight.section.item-aside-menu
             span
               |マイページリンク
         .dropdown-menu.has-background-black-ter
-          = link_to "出品する",new_item_path,class:"has-text-warning dropdown-item"
+          = link_to "出品する",new_item_path,class:"has-text-warning dropdown-item",data: {"turbolinks" => false}
           = link_to "ストック一覧",items_stock_path(current_user),class:"has-text-info dropdown-item"
           = link_to "ブックマーク商品一覧",favorites_path(current_user),class:"has-text-link dropdown-item"
           = link_to " チケット一覧",tickets_path,class:"has-text-success dropdown-item"

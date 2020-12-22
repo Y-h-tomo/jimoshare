@@ -76,7 +76,7 @@
     - if current_user == @item.user && @count == @item.quantity
       .card-footer.level
           .level-left.has-icons-left.control
-            = link_to edit_item_path(@item),class:"button is-success" do
+            = link_to edit_item_path(@item),class:"button is-success",data: {"turbolinks" => false} do
               span.has-text-white
                 i.fas.fa-edit
                 |編集

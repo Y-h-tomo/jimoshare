@@ -12,10 +12,6 @@ services:
       DATABASE_PASSWORD: password
       DATABASE_HOST: jimoshare-app-db.cazw7at7vqud.ap-northeast-1.rds.amazonaws.com
       TZ: Japan
-      FACEBOOK_CLIENT_ID: 306119297424542
-      FACEBOOK_CLIENT_SECRET: b1aa3cde52c91298db6a7ffa9d8ccc0a
-      GOOGLE_CLIENT_ID: 1029495452096-fjh9rr1nqq9t677bvqdk37qpfcdavnak.apps.googleusercontent.com
-      GOOGLE_CLIENT_SECRET: k5iVTqspHQAQN3ujmslcLMuY
     working_dir: /jimoshare-app
     logging:
       driver: awslogs

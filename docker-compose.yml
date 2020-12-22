@@ -5,7 +5,6 @@ services:
       context: .
     env_file:
       - ./environments/db.env
-      - ./environments/secret.env
     command: bundle exec puma -C config/puma.rb
     volumes:
       - .:/jimoshare-app
