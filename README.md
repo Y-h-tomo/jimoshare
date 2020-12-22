@@ -114,11 +114,10 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 ### Association
 
 - has_many :items
-- has_many :orders
 - has_many :favorites
 - has_many :likes
 - has_many :comments
-- has_many :stocks
+- has_many :tickets
 
 ## items テーブル
 
@@ -140,7 +139,6 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 ### Association
 
 - belongs_to :user
-- belongs_to :stock
 - has_many :favorites
 - has_many :likes
 - has_many :comments
