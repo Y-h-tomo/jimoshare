@@ -74,7 +74,7 @@
               span.fas.fa-undo
           - if user_signed_in? && current_user != @item.user && @count != "完売しました"
                 .level-item.has-icons.control
-                  = link_to new_item_ticket_path(@item), class:"button is-primary is-outlined" do
+                  = link_to new_item_ticket_path(@item), class:"button is-primary is-outlined",data: {"turbolinks" => false} do
                     span.fas.fa-shopping-cart
     - if current_user == @item.user && @count == @item.quantity
       .card-footer.level
