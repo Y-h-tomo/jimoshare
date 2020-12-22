@@ -78,6 +78,21 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - 緊急出品機能
 - 引き渡し場所の google map 利用
 
+# こだわった点
+
+### モバイルでの使用感
+
+- レスポンシブデザインを採用
+- 戻るボタンを随所に設置
+- アイコンタッチでのページ移動
+- ナンバー確認は拡大表示
+
+### 使われる技術を使う
+
+- markdown は Slim 記法
+- 開発環境は Docker
+- デプロイ環境は AWS
+
 # jimoshare の ER 図
 
 ![jimoshareのER図](app/assets/images/jimoshare.png)
