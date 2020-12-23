@@ -19,12 +19,12 @@ Rails.application.routes.draw do
   resources :favorites,only: %i[index]
   resources :items do
     post 'stock_out'
+    resources :tickets,only: %i[new create]
+    post  'tickets/confirmation'
     resource :favorites,only: %i[create destroy]
     get :favorites, on: :collection
     resource :likes,only: %i[create destroy]
     resources :comments,only: %i[new create]
-    resources :tickets,except: %i[index show]
-    post  'tickets/confirmation'
   end
 
 end

@@ -30,10 +30,6 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:id])
   end
 
-  def receipt
-    @items  = Item.where(user_id: current_user.id)
-  end
-
   def confirmation
     @ticket = Ticket.find(params[:item_id])
     @ticket.receipt = 1
