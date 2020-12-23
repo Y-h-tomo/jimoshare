@@ -59,7 +59,7 @@ class TicketsController < ApplicationController
   end
 
   def over_ban
-    redirect_to items_path if @item.tickets.count > @item.quantity
+    redirect_to items_path if @item.tickets.count >= @item.quantity
   end
 
   def user_check
