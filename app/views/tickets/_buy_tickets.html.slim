@@ -1,4 +1,4 @@
-= form_with url: item_tickets_path, class: 'item-form level', local: true do |f|
+= form_with model: @ticket, url: item_tickets_path, class: 'item-form level', local: true do |f|
   .container
     .field
         h2.form-bottom-text.has-text-info

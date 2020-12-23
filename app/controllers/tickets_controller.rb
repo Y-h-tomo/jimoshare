@@ -14,7 +14,7 @@ class TicketsController < ApplicationController
 
   def create
     num = Faker::Number.number(digits: 6)
-    ticket = Ticket.create(
+    ticket = Ticket.new(
       number: num,
       item_id: params[:item_id],
       user_id: current_user.id
