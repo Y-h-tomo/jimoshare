@@ -1,6 +1,6 @@
 # jimoshare
 
-[jimoshare](http://jimoshare-app-alb-1286113539.ap-northeast-1.elb.amazonaws.com/)
+[jimoshare](http://jimoshare-app-alb-2051033620.ap-northeast-1.elb.amazonaws.com/)
 
 - ECS のタスク定義再設定中は 503 エラーが発生する場合があります。
 
@@ -34,7 +34,7 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - 検索絞込み機能：ransak
 - 画像投稿： Active_Storage
 - 使用マシン：Mac Catalina(10.15.7)
-- 開発期間（約2週間）
+- 開発期間（約 2 週間）
 
 # 目指した課題解決
 

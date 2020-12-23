@@ -50,7 +50,7 @@ class ItemsController < ApplicationController
 
   def destroy
     set_item
-    if @item.destroy!
+    if @item.destroy
       redirect_to items_path
     else
       render :show
