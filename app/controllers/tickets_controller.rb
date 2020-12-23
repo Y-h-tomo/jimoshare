@@ -14,12 +14,12 @@ class TicketsController < ApplicationController
 
   def create
     num = Faker::Number.number(digits: 6)
-    @ticket = Ticket.create(
+    ticket = Ticket.create(
       number: num,
       item_id: params[:item_id],
       user_id: current_user.id
     )
-    if @ticket.save
+    if ticket.save
       redirect_to tickets_path
     else
       render :new

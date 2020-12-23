@@ -9,7 +9,7 @@ section.item-form-wrapper
     .field.level-item
       = render 'show_item'
     .field.level-item
-      = form_with model: @comment, url: item_comments_path do |f|
+      = form_with model: @comment, url: item_comments_path,local: true do |f|
         lavel.has-text-dark
           |コメント投稿
         .control.has-icons-left.comment-form
