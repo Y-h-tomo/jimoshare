@@ -71,7 +71,7 @@ gem 'devise'
 gem "font-awesome-sass"
 # 定型データ挿入用
 gem 'active_hash'
-  gem 'faker'
+gem 'faker'
 # 画像投稿,編集用
 gem 'mini_magick'
 gem 'image_processing', '~> 1.2'
