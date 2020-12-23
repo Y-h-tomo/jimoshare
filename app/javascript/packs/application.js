@@ -4,7 +4,7 @@
 // that code so it'll be compiled.
 
 require("@rails/ujs").start();
-require("turbolinks").start();
+// require("turbolinks").start();
 require("@rails/activestorage").start();
 require("../bulma");
 // require("../slick");
@@ -13,6 +13,7 @@ require("../bulma");
 require("jquery");
 require("../search");
 require("../preview");
+require("../back");
 
 import "@fortawesome/fontawesome-free/js/all";
 // Uncomment to copy all static images under ../images to the output folder and reference

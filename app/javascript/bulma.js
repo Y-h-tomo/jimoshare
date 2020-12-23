@@ -1,4 +1,4 @@
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("DOMContentLoaded", () => {
     // Get all "navbar-burger" elements
     const $navbarBurgers = Array.prototype.slice.call(
         document.querySelectorAll(".navbar-burger"),
@@ -21,18 +21,7 @@ document.addEventListener("turbolinks:load", () => {
         });
     }
 });
-document.addEventListener("turbolinks:load", () => {
-    (document.querySelectorAll(".notification .delete") || []).forEach(
-        ($delete) => {
-            var $notification = $delete.parentNode;
-
-            $delete.addEventListener("click", () => {
-                $notification.parentNode.removeChild($notification);
-            });
-        }
-    );
-});
-document.addEventListener("turbolinks:load", () => {
+document.addEventListener("DOMContentLoaded", () => {
     (document.querySelectorAll(".notification .delete") || []).forEach(
         ($delete) => {
             var $notification = $delete.parentNode;
