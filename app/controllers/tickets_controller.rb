@@ -13,10 +13,6 @@ class TicketsController < ApplicationController
   end
 
   def create
-    set_item
-    set_tickets
-    item_user_ban
-    over_ban
     num = Faker::Number.number(digits: 6)
     @ticket = Ticket.create(
       number: num,
