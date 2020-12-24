@@ -26,8 +26,16 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 
 .info-wrapper {
     padding: 1em;
-    height: 120vh;
+    height: 100vh;
     overflow: scroll;
     background-position: center;
     background-image: image-url("jimo_form_bg.png");
+}
+
+.info-second-wrapper {
+    padding: 1em;
+    height: 100vh;
+    overflow: scroll;
+    background-position: center;
+    background-image: image-url("item-bg-2.png");
 }

@@ -29,7 +29,7 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - ヴァージョン管理：GitHub
 - CI/CD パイプライン：CircleCI
 - 開発環境：local on Docker
-- デプロイ環境：AWS(EC2 / ECR / ECS / RDS)
+- デプロイ環境：AWS(EC2 / ECR / ECS / RDS / S3)
 - ユーザー管理：devise
 - 検索絞込み機能：ransak
 - 画像投稿： Active_Storage
