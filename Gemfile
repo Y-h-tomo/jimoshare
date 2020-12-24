@@ -82,3 +82,5 @@ gem 'pry-rails'
 gem 'ransack'
 # 非同期通信用
 gem 'jquery-rails'
+# 日本語化
+gem 'rails-i18n'

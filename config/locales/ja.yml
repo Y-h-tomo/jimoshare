@@ -1,0 +1,21 @@
+ja:
+  activerecord:
+    attributes:
+      user:
+        nickname: ニックネーム
+        phone_number: 電話番号
+        prefecture_id: エリア
+        contact_location: 引き渡し場所
+      item:
+        name: 商品名
+        quantity: 個数
+        description: 商品説明・条件
+        category_id: 分類
+        condition_id: 状態
+        deadline: 期限日時
+        prefecture_id: エリア
+        price: 価格
+        contact_location: 引き渡し場所
+        image: 画像
+      comment:
+        text: コメント

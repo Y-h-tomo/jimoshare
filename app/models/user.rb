@@ -22,6 +22,7 @@ class User < ApplicationRecord
     validates :phone_number, format: { with: VALID_PHONE_NUBER_REGEX }
   end
   validates :prefecture_id, numericality: { other_than: 1 }
+  validates :password, format: { with: PASSWORD_REGEX }
 
   def update_without_current_password(params, *options)
     params.delete(:current_password)
