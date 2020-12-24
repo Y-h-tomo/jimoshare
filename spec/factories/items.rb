@@ -9,6 +9,9 @@ FactoryBot.define do
     condition_id { Faker::Number.between(from: 2, to: 5) }
     prefecture_id { Faker::Number.between(from: 2, to: 48) }
     contact_location { Gimei.city.kanji }
+    stock { 0 }
+    limit { Faker::Date.between(from: Date.today, to: 1.year.after) }
+
     association :user
 
     after(:build) do |item|

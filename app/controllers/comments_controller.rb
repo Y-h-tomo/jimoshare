@@ -7,11 +7,7 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    if @comment.save
-      redirect_to new_item_comment_path
-    else
-      render :new
-    end
+    redirect_to new_item_comment_path
   end
 
   private

@@ -11,7 +11,7 @@ class HomesController < ApplicationController
       contact_location: '東京都千代田区サンプル1234',
       prefecture_id: '2'
     ) do |guest|
-      guest.password = SecureRandom.urlsafe_base64
+      guest.password = SecureRandom.hex(10)
       # guest.confirmed_at = Time.now
     end
     sign_in user
@@ -27,7 +27,7 @@ class HomesController < ApplicationController
       contact_location: '東京都千代田区サンプル12345',
       prefecture_id: '3'
     ) do |guest|
-      guest.password = SecureRandom.urlsafe_base64
+      guest.password = SecureRandom.hex(10)
       # guest.confirmed_at = Time.now
     end
     sign_in user
