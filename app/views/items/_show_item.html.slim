@@ -83,11 +83,12 @@
               span.has-text-white
                 i.fas.fa-edit
                 |編集
-          .level-right.has-icons-left.control
-            = link_to item_path(@item),method: :delete,class:"button is-danger" do
-              span.has-text-white
-                i.fas.fa-trash-alt
-                |削除
+          - if @item.comments.nil? || @item.favorites.nil? || @item.likes.nil?
+            .level-right.has-icons-left.control
+              = link_to item_path(@item),method: :delete,class:"button is-danger" do
+                span.has-text-white
+                  i.fas.fa-trash-alt
+                  |削除
       - if @item.stock == true
         .card-footer.level
           .level-item.has-icons.control
