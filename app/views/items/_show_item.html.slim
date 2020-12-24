@@ -49,10 +49,10 @@
           .level-item.has-icons.control
             = link_to "https://twitter.com/share?url=#{ request.url }&text=#{ @item.name }", class: 'btn btn-default', target: '_blank' do
               span.fab.fa-twitter style='color: #3399FF;'
-          .level-item.has-icons.control
-            = link_to new_item_comment_path(@item),class:"button is-success is-outlined" do
-              span.fas.fa-comment
           - if user_signed_in?
+            .level-item.has-icons.control
+              = link_to new_item_comment_path(@item),class:"button is-success is-outlined" do
+                span.fas.fa-comment
             - if @item.favorites_by?(current_user)
               .level-item.has-icons.control
                 = link_to item_favorites_path(@item),method: :delete,class:"button is-link" do
