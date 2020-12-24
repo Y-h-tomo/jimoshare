@@ -6,12 +6,8 @@
       .card-header-title.item-card-title
         = @item.name
     .tags.has-addons
-      span.tag.icon.card-tag
-        i.fas.fa-folder
       span.tag.is-info.is-light
         = @item.category.name
-      span.tag.icon.card-tag
-        i.fas.fa-map-marked-alt
       span.tag.is-success.is-light
         = @item.prefecture.name
       .card-image.level
@@ -34,8 +30,12 @@
           | 期限日時:
         = @item.deadline
         br
-        span.fas.fa-heart.has-text-danger
-        = @item.likes.count
+        .has-icons.control.has-text-danger
+          span.fas.fa-heart
+          = @item.likes.count
+        .has-icons.control.has-text-link
+          span.fas.fa-bookmark
+          = @item.favorites.count
     .card-content
       span.tag
         | 引き渡し説明・条件
@@ -63,11 +63,11 @@
                   span.fas.fa-bookmark
             - if @item.likes_by?(current_user)
               .level-item.has-icons.control
-                = link_to item_likes_path(@item),method: :delete,class:"button is-danger" do
+                = link_to item_likes_path(@item),method: :delete,class:"button is-danger"do
                   span.fas.fa-heart
             - else
               .level-item.has-icons.control
-                = link_to item_likes_path(@item),method: :post,class:"button is-danger is-outlined" do
+                = link_to item_likes_path(@item),method: :post,class:"button is-danger is-outlined"do
                   span.fas.fa-heart
           .level-item.has-icons.control
             = link_to :back, class:"button is-dark is-outlined" do
