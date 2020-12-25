@@ -8,7 +8,7 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
   #navbarBasicExample.navbar-menu
     .navbar-start
       = link_to "商品一覧",items_path, class:"navbar-item"
-      = link_to "問い合わせ",homes_show_path, class:"navbar-item"
+      = link_to "問い合わせ","https://docs.google.com/forms/d/e/1FAIpQLScoz5hK_Dd2t6VM9AGo0N1p4Ceh1VTYQ_D5_d1iHDG9g1Qv0g/viewform?usp=sf_link", class:"navbar-item"
       - if user_signed_in?
         = link_to "出品する",new_item_path,class:"navbar-item",data: {"turbolinks" => false}
         = link_to " チケット一覧",tickets_path, class:"navbar-item"
