@@ -11,6 +11,7 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
       - if user_signed_in?
         = link_to "出品する",new_item_path,class:"navbar-item",data: {"turbolinks" => false}
         = link_to " チケット一覧",tickets_path, class:"navbar-item"
+        = link_to "緊急出品",items_urgent_path, class:"navbar-item"
         .navbar-item.has-dropdown.is-hoverable
             = link_to "#{current_user.nickname}さん", user_path(current_user),class:"navbar-item has-text-info"
             .navbar-dropdown

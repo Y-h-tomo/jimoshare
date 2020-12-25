@@ -90,7 +90,7 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 
 ### 使われる技術を使う
 
-- markdown は Slim 記法
+- フロントに Slim、Sass、JavaScript を使う
 - 開発環境は Docker
 - デプロイ環境は AWS
 

@@ -1,0 +1,33 @@
+= form_with model: @item, url: items_urgent_create_path, class: 'urgent-form level', local: true do |f|
+  .container
+    .field
+      = render 'shared/error_messages', model: f.object
+    .field id="image-list"
+        = image_tag @item.image.variant(resize: '180x180'), id: 'image' if @item.image.present?
+    .field
+        lavel.has-text-white
+          |商品画像
+        .control.has-icons-left
+          = f.file_field :image, class:"input", id:"item_image",placeholder:"商品画像", autofocus: true
+          span.icon.is-small.is-left
+            i.fas.fa-image
+    .field
+      lavel.has-text-white
+        |引き渡し期限日時(現在より1年以内)
+        .control.has-icons-left
+          = f.datetime_field :deadline, class:"input", id:"deadline"
+          span.icon.is-small.is-left
+            i.fas.fa-calendar-day
+    .field.has-text-warning
+        h2.form-bottom-text
+          |  「
+          span.fas.fa-hand-holding-heart
+          | 出品する 」のボタンを押すことにより、出品に関わる利用規約に同意したものとみなします
+        .control.has-icons-left.hero
+          = f.submit  "出品する", class:"button is-warning is-outlined"
+          span.icon
+            i.fas.fa-hand-holding-heart.has-text-warning
+    .field.hero
+      = link_to :back, class:"button is-dark is-outlined" do
+        span.fas.fa-undo
+        |　元のページに戻る

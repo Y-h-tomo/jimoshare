@@ -17,6 +17,8 @@ Rails.application.routes.draw do
   get  'items/receipt'
   resources :tickets,only: %i[index show]
   resources :favorites,only: %i[index]
+  get 'items/urgent'
+  post 'items/urgent_create'
   resources :items do
     post 'stock_out'
     resources :tickets,only: %i[new create]
