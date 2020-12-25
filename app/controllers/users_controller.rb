@@ -2,6 +2,18 @@ class UsersController < ApplicationController
   before_action :set_user
   before_action :authenticate_user!, except: :show
 
+  def index
+    items = []
+    favorites = Favorite.where(user_id: current_user)
+    favorites.each do |favorite|
+      items << favorite.item
+    end
+    @like_users = []
+    items.each do |item|
+      @like_users << item.user
+    end
+  end
+
   def edit
   end
 
@@ -30,6 +42,6 @@ class UsersController < ApplicationController
   end
 
   def set_user
-    @user = User.find(params[:id])
+    @user = current_user
   end
 end

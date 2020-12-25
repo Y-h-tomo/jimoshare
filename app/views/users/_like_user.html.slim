@@ -1,0 +1,15 @@
+.container
+  .card.user-info-card
+    .card-header
+      span.card-header-icon.tag.is-info.is-light
+          |ニックネーム
+      .card-header-title
+          = like_user.nickname
+    .card-content
+      p.tag
+        | エリア
+      = like_user.prefecture.name
+      br
+      p.tag
+        | 問い合わせ用email
+      = like_user.contact_email
