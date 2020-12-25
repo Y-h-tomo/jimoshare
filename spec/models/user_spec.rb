@@ -13,10 +13,6 @@ RSpec.describe User, type: :model do
         @user.contact_email = nil
         expect(@user).to be_valid
       end
-      it '緊急出品用引き渡し場所が未入力でもユーザー登録ができる' do
-        @user.contact_location = nil
-        expect(@user).to be_valid
-      end
     end
     context 'ユーザー情報の登録ができないとき' do
       it '名前が未入力だとユーザー登録ができない' do
@@ -92,6 +88,11 @@ RSpec.describe User, type: :model do
         @user.phone_number = "0#{rand(0..9)}0-#{rand(1_000_000..99_999_999)}"
         @user.valid?
         expect(@user.errors.full_messages).to include('電話番号は不正な値です')
+      end
+      it '住所が未入力だとユーザー登録できない' do
+        @user.adress = nil
+        @user.valid?
+        expect(@user.errors.full_messages).to include('住所を入力してください')
       end
     end
   end

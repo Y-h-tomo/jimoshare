@@ -80,29 +80,7 @@ class ItemsController < ApplicationController
   end
 
   def urgent
-    @item = Item.new
-  end
-
-  def urgent_create
-    @last_item = Item.where(user_id: current_user).last
-    @item = Item.create(
-      deadline: params[:deadline],
-      image: params[:image],
-      name: @last_item.name,
-      description: @last_item.description,
-      category_id: @last_item.category_id,
-      condition_id: @last_item.condition_id,
-      prefecture_id: @last_item.prefecture_id,
-      price: @last_item.price,
-      contact_location: @last_item.contact_location,
-      stock: 0,
-      limit: nil
-    )
-    if @item.save
-      redirect_to items_path
-    else
-      render :new
-    end
+    @item = Item.where(user_id: current_user).last
   end
 
   private

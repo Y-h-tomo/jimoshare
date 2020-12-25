@@ -24,8 +24,8 @@ class UsersController < ApplicationController
       :email,
       :phone_number,
       :contact_email,
-      :contact_location,
-      :prefecture_id
+      :prefecture_id,
+      :adress
     )
   end
 

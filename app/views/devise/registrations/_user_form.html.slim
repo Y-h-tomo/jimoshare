@@ -48,6 +48,13 @@
           span.icon.has-text-white
             i.fas.fa-map-marked-alt
           = f.collection_select(:prefecture_id,Prefecture.all, :id, :name, {}, {class:"select", id:"user-prefecture"})
+      .field
+        lavel.has-text-white
+          |住所
+        .control.has-icons-left
+          = f.text_field :adress, class:"input", id:"adress", placeholder:"住所"
+          span.icon.is-small.is-left
+            i.fas.fa-map-marker-alt
     .field.either-form
       p.has-text-info
         |青枠部分は任意入力です
@@ -60,13 +67,6 @@
           = f.email_field :contact_email, class:"input", id:"contact_email", placeholder:"Email (問い合わせ受け付け用)"
           span.icon.is-small.is-left
             i.fas.fa-paper-plane
-      .field
-        lavel.has-text-white
-          |引き渡し場所(緊急用)
-        .control.has-icons-left
-          = f.text_field :contact_location, class:"input", id:"password-confirmation", placeholder:"引き渡し場所(緊急用)"
-          span.icon.is-small.is-left
-            i.fas.fa-map-marker-alt
     .field.hero
       h2.form-bottom-text.has-text-danger
         |  「

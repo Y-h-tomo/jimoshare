@@ -1,4 +1,8 @@
-if (document.URL.match(/new/) || document.URL.match(/edit/)) || document.URL.match(/urgent/) {
+if (
+    document.URL.match(/new/) ||
+    document.URL.match(/edit/) ||
+    document.URL.match(/urgent/)
+) {
     document.addEventListener("DOMContentLoaded", function() {
         const ImageList = document.getElementById("image-list");
         // 選択した画像を表示する関数
