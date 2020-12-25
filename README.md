@@ -52,6 +52,8 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 
 ### 商品出品機能
 
+[![Image from Gyazo](https://i.gyazo.com/08c261ff37a934a3b6f5047f5696fac5.gif)](https://gyazo.com/08c261ff37a934a3b6f5047f5696fac5)
+
 ### ストック出品機能
 
 ### お知らせ機能
@@ -59,19 +61,25 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - 出品時はストック出品と直接出品があり、ストック出品時はユーザー専用画面にのみ表示され、他ユーザーが購入できない状態ですが、ワンタッチで出品することが可能です。
 - ストック出品は設定した日にお知らせ表示が行われ、商品の確認/出品がすぐ行えますので、在庫管理のように利用することが可能です。
 
+[![Image from Gyazo](https://i.gyazo.com/7f767e42ec87828361fa1509a24d1936.gif)](https://gyazo.com/7f767e42ec87828361fa1509a24d1936)
+
 ### 緊急出品機能
 
 - 毎回同じデータの入力が面倒な場合用に、緊急出品が可能です。前回の出品データを元に、画像の選択し直しだけで再出品が可能です。
+
+[![Image from Gyazo](https://i.gyazo.com/b20ad81c1cff4a967ea9acdac80fe2e4.gif)](https://gyazo.com/b20ad81c1cff4a967ea9acdac80fe2e4)
 
 ### 購入機能
 
 ### チケット発券機能
 
 - 購入時は商品を確認し、チケット発券を行います。チケット発券を行うと、出品ユーザーと購入ユーザーのみ確認できるチケットが発行されます。
+  [![Image from Gyazo](https://i.gyazo.com/779b7fba62b5d1b7d6823c71baae3b9d.gif)](https://gyazo.com/779b7fba62b5d1b7d6823c71baae3b9d)
 
 ### ナンバーチェック機能
 
 - 実際に食品の購入や譲渡を行う際に、チェックで拡大するチケットのナンバーを照らし合わせ、出品者が受け取り処理を行うことで、取引が成立します。
+  [![Image from Gyazo](https://i.gyazo.com/0bae62e72003ca4754a54d902344ab91.gif)](https://gyazo.com/0bae62e72003ca4754a54d902344ab91)
 
 # サブ機能
 
@@ -87,6 +95,9 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - いいね機能
 - コメント機能
 - twitter シェア機能
+  [![Image from Gyazo](https://i.gyazo.com/6b5bbf5beb39774453cae05e4282a8c5.gif)](https://gyazo.com/6b5bbf5beb39774453cae05e4282a8c5)
+  [![Image from Gyazo](https://i.gyazo.com/e8e0e3881c096fab4216bb7d049eabcd.gif)](https://gyazo.com/e8e0e3881c096fab4216bb7d049eabcd)
+  [![Image from Gyazo](https://i.gyazo.com/0ccf9ee2ca6f5adba63ff0c82f2ee91f.gif)](https://gyazo.com/0ccf9ee2ca6f5adba63ff0c82f2ee91f)
 
 ## 追加実装予定
 

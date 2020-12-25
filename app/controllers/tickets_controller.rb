@@ -34,7 +34,7 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:item_id])
     @ticket.receipt = 1
     if @ticket.save
-      redirect_to root_path
+      redirect_to items_path
     else
       render :receipt
     end
