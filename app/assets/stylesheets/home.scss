@@ -1,21 +1,26 @@
 $jimo-bg: rgba(0, 0, 0, 0.7);
 .top-wrapper {
     padding-top: 7vh;
-    height: 60vh;
+    height: 80vh;
     overflow: hidden;
     background-size: cover;
     background-position: center;
-    background-image: image-url("top.png");
+    position: relative;
 }
 
 .main-title {
     font-family: "Comic Sans MS";
-    font-size: 5em;
+    color: white;
+    font-size: 10vw;
 }
 
 .main-subtitle {
     color: white;
     background-color: $jimo-bg;
+}
+
+.title-position {
+    position: absolute;
 }
 
 .top-card {
