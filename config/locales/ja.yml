@@ -5,7 +5,7 @@ ja:
         nickname: ニックネーム
         phone_number: 電話番号
         prefecture_id: エリア
-        contact_location: 引き渡し場所
+        adress: 住所
       item:
         name: 商品名
         quantity: 個数

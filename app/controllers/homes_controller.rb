@@ -8,8 +8,8 @@ class HomesController < ApplicationController
       nickname: 'ゲストユーザー',
       phone_number: '0901234567',
       contact_email: 'guest@example.com',
-      contact_location: '東京都千代田区サンプル1234',
-      prefecture_id: '2'
+      adress: '東京都千代田区サンプル1234',
+      prefecture_id: '14'
     ) do |guest|
       guest.password = SecureRandom.hex(10)
       # guest.confirmed_at = Time.now
@@ -24,8 +24,8 @@ class HomesController < ApplicationController
       nickname: 'ゲストユーザー2',
       phone_number: '0907654321',
       contact_email: 'guest2@example.com',
-      contact_location: '東京都千代田区サンプル12345',
-      prefecture_id: '3'
+      adress: '東京都千代田区サンプル12345',
+      prefecture_id: '14'
     ) do |guest|
       guest.password = SecureRandom.hex(10)
       # guest.confirmed_at = Time.now

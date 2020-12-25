@@ -7,6 +7,6 @@ FactoryBot.define do
     user.prefecture_id { Faker::Number.between(from: 2, to: 48) }
     user.phone_number { "0#{rand(0..9)}0#{Faker::Number.number(digits: 8)}" }
     user.contact_email  { Faker::Internet.free_email }
-    user.contact_location { Gimei.city.kanji }
+    user.adress { Gimei.city.kanji }
   end
 end

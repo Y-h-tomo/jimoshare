@@ -79,6 +79,10 @@ class ItemsController < ApplicationController
     @receipt_items = Item.where(user_id: current_user, stock: false)
   end
 
+  def urgent
+    @item = Item.where(user_id: current_user).last
+  end
+
   private
 
   def set_item
