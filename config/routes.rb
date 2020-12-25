@@ -10,9 +10,10 @@ Rails.application.routes.draw do
   post '/homes/guest_sign_in', to: 'homes#new_guest'
   post '/homes/guest2_sign_in', to: 'homes#new_guest2'
   root 'homes#index'
+  get '/homes/show', to: 'homes#show'
   get 'items/search'
   get 'items/sort'
-  resources :users, only: %i[edit update show]
+  resources :users, only: %i[index edit update show]
   get 'items/stock'
   get  'items/receipt'
   resources :tickets,only: %i[index show]

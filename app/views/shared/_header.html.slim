@@ -8,6 +8,7 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
   #navbarBasicExample.navbar-menu
     .navbar-start
       = link_to "商品一覧",items_path, class:"navbar-item"
+      = link_to "問い合わせ",homes_show_path, class:"navbar-item"
       - if user_signed_in?
         = link_to "出品する",new_item_path,class:"navbar-item",data: {"turbolinks" => false}
         = link_to " チケット一覧",tickets_path, class:"navbar-item"
@@ -17,6 +18,7 @@ nav.navbar.is-fixed-top[role="navigation" aria-label="main navigation"]
             .navbar-dropdown
               = link_to "ストック一覧",items_stock_path(current_user),class:"navbar-item"
               = link_to "ブックマーク商品一覧",favorites_path(current_user),class:"navbar-item"
+              = link_to "ブックマーク商品のユーザー一覧",users_path(current_user),class:"navbar-item"
               hr.navbar-divider
               = link_to "チケット受け取り",items_receipt_path(current_user),class:"navbar-item"
     .navbar-end

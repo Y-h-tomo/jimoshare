@@ -44,3 +44,9 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     background-position: center;
     background-image: image-url("item-bg-2.png");
 }
+
+.inquiry {
+    margin-top: 2em;
+    padding: 2em;
+    background-color: $jimo-bg;
+}
