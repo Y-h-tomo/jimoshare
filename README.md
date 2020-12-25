@@ -95,9 +95,6 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - いいね機能
 - コメント機能
 - twitter シェア機能
-  [![Image from Gyazo](https://i.gyazo.com/6b5bbf5beb39774453cae05e4282a8c5.gif)](https://gyazo.com/6b5bbf5beb39774453cae05e4282a8c5)
-  [![Image from Gyazo](https://i.gyazo.com/e8e0e3881c096fab4216bb7d049eabcd.gif)](https://gyazo.com/e8e0e3881c096fab4216bb7d049eabcd)
-  [![Image from Gyazo](https://i.gyazo.com/0ccf9ee2ca6f5adba63ff0c82f2ee91f.gif)](https://gyazo.com/0ccf9ee2ca6f5adba63ff0c82f2ee91f)
 
 ## 追加実装予定
 
