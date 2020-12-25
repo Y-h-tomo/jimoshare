@@ -1,5 +1,6 @@
 $(function() {
-    $(".top-slick").slick({
-        dots: true,
+    $(".slick").slick({
+        autoplay: true,
+        autoplaySpeed: 5000,
     });
 });
