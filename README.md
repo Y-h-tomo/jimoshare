@@ -1,6 +1,6 @@
 # jimoshare
 
-[jimoshare](http://jimoshare-app-alb-2051033620.ap-northeast-1.elb.amazonaws.com/)
+[jimoshare](https://www.jimoshare.tk/)
 
 - ECS のタスク定義再設定中は 503 エラーが発生する場合があります。
 
