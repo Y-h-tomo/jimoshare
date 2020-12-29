@@ -1,7 +1,7 @@
 section.hero.previews.top-wrapper.is-medium
   .slick
-      =image_tag("top-slick-1.png")
       =image_tag("top-slick-2.png")
+      =image_tag("top-slick-1.png")
       =image_tag("top-slick-3.png")
   .hero-body.title-position
     .container
@@ -9,12 +9,13 @@ section.hero.previews.top-wrapper.is-medium
           | jimoshare
         h2.main-subtitle
           | フードロスも地産地消へ
-.container.hero.info-title
-  .hero-body
-    h1.title
-      | jimoshareとは....
-    h2.subtitle
-      |フードロスの削減を地産地消と結びつけたポートフォリオサービスです
+section
+  .container.hero
+    .hero-body
+      h1.title
+        | jimoshareとは....
+      h2.subtitle
+        |フードロスの削減を地産地消と結びつけたポートフォリオサービスです
 section.info-wrapper.level
     .card.top-card
       .card-image
@@ -53,14 +54,19 @@ section.info-wrapper.level
           |それらの問題を解決するためのサービスの一つとして、
           |”フードロスも地産地消へ”をキャッチコピーに
           |開発に挑戦したポートフォリオサービスです。
-.container.hero.info-title
-  .hero-body
-    h1.title
-      | jimoshareの使い方
-    h2.subtitle
-      |在庫品や賞味期限が近い食品の処理、収穫物に困っているユーザーと
-      |子供食堂、ペットの食費などに困っているユーザーをつなげます
+section
+  .container.hero
+    .hero-body
+      h1.title
+        | jimoshareの使い方
+      h2.subtitle
+        |在庫品や賞味期限が近い食品の処理、収穫物に困っているユーザーと
+        |子供食堂、ペットの食費などに困っているユーザーをつなげます
 section.info-second-wrapper.level
+  .card.top-card
+    .card-image
+      .image.info-image
+          =image_tag("howto.png")
   .card.top-card.has-background-warning
     p
       strong
@@ -74,10 +80,6 @@ section.info-second-wrapper.level
       |③出品中の食品に購入者がつくと、商品詳細にチケットが表示されます。
     p
       |④引き取りに来た購入ユーザーの提示した番号を確認し、食品の販売または提供を行い、チケット受け取り処理を行います。
-  .card.top-card
-    .card-image
-      .image.info-image
-          =image_tag("howto.png")
   .card.top-card.has-background-primary
     p
       strong

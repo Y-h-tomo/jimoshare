@@ -1,7 +1,7 @@
 $jimo-bg: rgba(0, 0, 0, 0.7);
 .top-wrapper {
-    padding-top: 7vh;
-    height: 80vh;
+    padding-top: 6vh;
+    max-height: 80vh;
     overflow: hidden;
     background-size: cover;
     background-position: center;
@@ -24,7 +24,7 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 }
 
 .top-card {
-    width: 40em;
+    width: 30em;
     padding: 1em;
     margin: 1em;
 }
@@ -32,6 +32,8 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 .info-wrapper {
     padding: 1em;
     height: 100vh;
+    display: flex;
+    flex-flow: row wrap;
     overflow: scroll;
     background-size: cover;
     background-position: center;
@@ -42,6 +44,8 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     padding: 1em;
     height: 100vh;
     overflow: scroll;
+    display: flex;
+    flex-flow: row wrap;
     background-size: cover;
     background-position: center;
     background-image: image-url("item-bg-2.png");
