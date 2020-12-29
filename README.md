@@ -109,7 +109,7 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - 戻るボタンを随所に設置
 - アイコンタッチでのページ移動
 - ナンバー確認は拡大表示
-
+[![Image from Gyazo](https://i.gyazo.com/963b84337b6d66f0817240272faabf5b.gif)](https://gyazo.com/963b84337b6d66f0817240272faabf5b)
 ### 使われる技術を使う
 
 - フロントに Slim、Sass、JavaScript を使う
