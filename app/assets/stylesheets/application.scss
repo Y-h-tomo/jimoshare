@@ -50,6 +50,7 @@ $tag-delete-margin: 5px;
     top: 3.7em;
     left: 0.5em;
     z-index: 20;
+    padding: 0.2em;
 }
 
 .user-item {
@@ -57,11 +58,12 @@ $tag-delete-margin: 5px;
     top: 3.7em;
     z-index: 20;
     right: 0.5em;
+    padding: 0.2em;
 }
 
 .back-icon {
     position: fixed;
-    top: 6em;
+    top: 6.5em;
     z-index: 20;
     left: 0.5em;
 }
