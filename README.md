@@ -109,6 +109,7 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - 戻るボタンを随所に設置
 - アイコンタッチでのページ移動
 - ナンバー確認は拡大表示
+  [![Image from Gyazo](https://i.gyazo.com/d645d9ffa17a2cdd39cec836552a2bd0.gif)](https://gyazo.com/d645d9ffa17a2cdd39cec836552a2bd0)
 
 [![Image from Gyazo](https://i.gyazo.com/963b84337b6d66f0817240272faabf5b.gif)](https://gyazo.com/963b84337b6d66f0817240272faabf5b)
 
@@ -117,6 +118,7 @@ jimoshare(ジモシェア)は、「フードロスも地産地消」をキャッ
 - フロントに Slim、Sass、JavaScript を使う
 - 開発環境は Docker
 - デプロイ環境は AWS
+  ![dockerイメージ図](app/assets/images/docker-image.png)
 
 # jimoshare の ER 図
 
