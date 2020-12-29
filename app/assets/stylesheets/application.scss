@@ -17,16 +17,19 @@
 @import "slick-theme";
 @import "slick";
 .flash {
-    position: sticky;
+    position: fixed;
     z-index: 20;
-    top: 6em;
+    line-height: 1em;
+    padding: 0.5em;
+    top: 4em;
+    left: 2em;
     text-align: center;
     color: white;
     &__alert {
-        background-color: red;
+        background-color: rgba(250, 25, 25, 0.7);
     }
     &__notice {
-        background-color: blue;
+        background-color: rgba(25, 25, 250, 0.7);
     }
 }
 

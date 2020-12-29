@@ -19,7 +19,7 @@
           i.fas.fa-yen-sign.has-text-danger.yen-icon
           = item.price
       span.tag.is-warning.is-light
-        = item.deadline
+        = item.deadline.strftime("%Y-%m-%d %H:%M")
         |まで
     - if item.tickets.count >= item.quantity
       .card-footer.control.has-icons-left

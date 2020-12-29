@@ -33,6 +33,7 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     padding: 1em;
     height: 100vh;
     overflow: scroll;
+    background-size: cover;
     background-position: center;
     background-image: image-url("jimo_form_bg.png");
 }
@@ -41,6 +42,7 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     padding: 1em;
     height: 100vh;
     overflow: scroll;
+    background-size: cover;
     background-position: center;
     background-image: image-url("item-bg-2.png");
 }

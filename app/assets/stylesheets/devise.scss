@@ -4,6 +4,8 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     height: 120vh;
     background-image: image-url("jimo_form_bg.png");
     overflow: scroll;
+    background-size: cover;
+    background-position: center;
 }
 
 .form-title {
@@ -29,4 +31,10 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 
 #user-prefecture {
     min-width: 20vw;
+}
+
+.user-info-card {
+    width: 30em;
+    margin: 0 auto;
+    margin-top: 5em;
 }

@@ -1,3 +1,5 @@
 window.onpageshow = function(event) {
-    if (event.persisted) {}
+    if (event.persisted) {
+        window.location.reload();
+    }
 };

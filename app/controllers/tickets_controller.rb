@@ -13,16 +13,21 @@ class TicketsController < ApplicationController
   end
 
   def create
-    num = Faker::Number.number(digits: 6)
-    ticket = Ticket.create(
-      number: num,
-      item_id: params[:item_id],
-      user_id: current_user.id
-    )
-    if ticket.save
-      redirect_to tickets_path
+    ticket_check
+    if @tickets.count > 4
+      redirect_to items_path, alert: 'ユーザーの重複購入は5枚までとなっています。'
     else
-      render :new
+      num = Faker::Number.number(digits: 6)
+      ticket = Ticket.create(
+        number: num,
+        item_id: params[:item_id],
+        user_id: current_user.id
+      )
+      if ticket.save
+        redirect_to tickets_path
+      else
+        redirect_to items_path
+      end
     end
   end
 
@@ -61,6 +66,10 @@ class TicketsController < ApplicationController
   def user_check
     out_user = Ticket.find_by(item_id: params[:item_id])
     redirect_to items_path if current_user == out_user
+  end
+
+  def ticket_check
+    @tickets = Ticket.where(item_id: params[:item_id], user_id: current_user)
   end
 
   def random_number_generator(n)

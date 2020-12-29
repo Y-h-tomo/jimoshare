@@ -23,7 +23,7 @@
         br
         span.tag.card-info
           | 期限日時:
-        = @item.deadline
+        = @item.deadline.strftime("%Y-%m-%d %H:%M")
     .card-content.card-description
       span.tag
         | 引き渡し説明・条件

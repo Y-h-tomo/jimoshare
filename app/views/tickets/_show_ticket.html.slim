@@ -5,7 +5,7 @@
       i.fas.fa-ticket-alt.is-large
     p.level-right.is-size-7
       |期限
-      = @ticket.item.deadline
+      = @ticket.item.deadline.strftime("%Y-%m-%d %H:%M")
   .modal
     .modal-background
     .modal-card

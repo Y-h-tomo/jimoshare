@@ -1,10 +1,15 @@
 = form_with model: @ticket, url: item_tickets_path, class: 'item-form level', local: true do |f|
   .container
     .field
-        h2.form-bottom-text.has-text-info
+        h2.form-bottom-text.has-text-light
           | 「
           span.fas.fa-ticket-alt.is-large
-          | チケット購入する 」のボタンを押すことにより、購入に関わる利用規約に同意したものとみなします
+          | チケット購入する 」のボタンを押すことにより、購入に関わる利用規約に同意したものとみなします。
+          br
+          span.icon.has-text-warning
+            i.fas.fa-exclamation-triangle
+          span.has-text-danger
+            |重複購入は5枚まで
         .control.has-icons-left.hero
           = f.submit "チケット購入する", class:"button is-info is-outlined"
           span.icon.has-text-light

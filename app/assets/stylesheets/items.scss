@@ -5,6 +5,8 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 .item-form-wrapper {
     padding-top: 7vh;
     height: 120vh;
+    background-size: cover;
+    background-position: center;
     background-image: image-url("item-bg.png");
     overflow: scroll;
 }
@@ -112,4 +114,20 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     z-index: 20;
     top: 3em;
     left: 3em;
+}
+
+.comment-card {
+    width: 20em;
+    margin: 0.4em;
+    padding: 0.4em;
+}
+
+.comment-index {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+.comment-form {
+    width: 30em;
+    line-height: 3em;
 }
