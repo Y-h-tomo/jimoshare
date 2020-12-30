@@ -3,7 +3,6 @@ class ItemsController < ApplicationController
 
   def index
     @q = Item.ransack(params[:q])
-    time = Time.now
     @items = if params[:q].present?
                @q.result(distinct: true).where(stock: 0).order('created_at DESC')
              else
@@ -78,7 +77,7 @@ class ItemsController < ApplicationController
 
   def receipt
     @receipt_items = Item.where(user_id: current_user, stock: false)
-    @used_tickets = Ticket.where(receipt: 1, item_id:current_user.items)
+    @used_tickets = Ticket.where(receipt: 1, item_id: current_user.items)
   end
 
   def urgent
