@@ -16,7 +16,7 @@ class TicketsController < ApplicationController
   def create
     ticket_check
     if @tickets.count > 4
-      redirect_to items_path, alert: 'ユーザーの重複購入は5枚までとなっています。'
+      redirect_to items_path, alert: 'ユーザーの重複発券は5枚までとなっています。'
     else
       num = Faker::Number.number(digits: 6)
       ticket = Ticket.create(
@@ -25,9 +25,9 @@ class TicketsController < ApplicationController
         user_id: current_user.id
       )
       if ticket.save
-        redirect_to tickets_path
+        redirect_to tickets_path, notice: 'チケットを発券しました。'
       else
-        redirect_to items_path
+        redirect_to items_path, alert: 'チケット発券に失敗しました。'
       end
     end
   end
@@ -40,8 +40,9 @@ class TicketsController < ApplicationController
     @ticket = Ticket.find(params[:item_id])
     @ticket.receipt = 1
     if @ticket.save
-      redirect_to items_path
+      redirect_to items_path, notice: 'チケット受け取りが正常に処理されました。'
     else
+      flash[:alert] = '受け取り処理に失敗しました。'
       render :receipt
     end
   end

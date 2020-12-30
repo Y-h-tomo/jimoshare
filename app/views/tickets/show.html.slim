@@ -15,8 +15,7 @@ section.ticket-form-wrapper
   .back-icon.level
     = link_to :back, class:"button is-dark is-outlined is-small" do
       span.fas.fa-undo
-    .ticket-check
-      p
-        |タッチでチケットが拡大します
+    p.button.is-dark.is-small
+      |タッチでチケットが拡大します
   .section.ticket-index
       = render 'show_ticket'

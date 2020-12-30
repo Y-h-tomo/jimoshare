@@ -6,8 +6,12 @@ class ApplicationController < ActionController::Base
   private
 
   def check_items
+    @check_items = []
     @time = Time.now
-    @check_items = Item.where(user_id: current_user, stock: true)
+    check_items = Item.where(user_id: current_user, stock: true)
+    check_items.each do |item|
+      @check_items << item if item.limit <= @time
+    end
   end
 
   def configure_permitted_parameters

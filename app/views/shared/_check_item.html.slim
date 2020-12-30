@@ -1,0 +1,10 @@
+.notification.is-info.is-light.check-item
+    button.delete, aria-label="delete"
+    span.icon.has-text-warning
+      i.fas.fa-exclamation-triangle
+    span
+      |ストック出品中の以下の商品のお知らせ日が過ぎています。
+    field.is-grouped.is-grouped-multiline
+          .control.has-text-white-bis
+            .tags.has-addons
+                = link_to  check_item.name, item_path(check_item)

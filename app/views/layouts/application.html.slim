@@ -12,7 +12,7 @@ html
     script type="text/javascript" src="//cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"
   body
     = render 'shared/header'
-    = render 'shared/notice_stock'
+    = render partial: 'shared/check_item',collection:@check_items
     = render 'shared/flash_message'
     = yield
     = render 'shared/footer'

@@ -1,13 +1,13 @@
 section.ticket-form-wrapper
   .hero.is-medium.is-dark.is-bold.page-title
     h1.title.form-title
-      |購入する
+      |発券する
   .back-icon
     = link_to :back, class:"button is-dark is-outlined is-small" do
       span.fas.fa-undo
   = render 'buy_tickets'
   .hero.is-medium.is-success.is-bold
     h1.title.form-title
-      |販売済みチケット
+      |発券済みチケット
   .section.item-index
     = render partial:'out_ticket',collection:@out_tickets

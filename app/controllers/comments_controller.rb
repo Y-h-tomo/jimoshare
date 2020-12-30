@@ -7,7 +7,11 @@ class CommentsController < ApplicationController
 
   def create
     @comment = Comment.create(comment_params)
-    redirect_to new_item_comment_path
+    if @comment.save
+      redirect_to new_item_comment_path, notice: 'コメントを投稿しました。'
+    else
+      redirect_to new_item_comment_path, alert: 'コメント投稿に失敗しました。'
+    end
   end
 
   private

@@ -17,8 +17,9 @@ class ItemsController < ApplicationController
   def create
     @item = Item.create(item_params)
     if @item.save
-      redirect_to items_path
+      redirect_to items_path, notice: '商品を出品しました。'
     else
+      flash[:alert] = '入力情報が間違っています。'
       render :new
     end
   end
@@ -42,8 +43,9 @@ class ItemsController < ApplicationController
   def update
     set_item
     if @item.update(item_params)
-      redirect_to item_path(@item)
+      redirect_to item_path(@item), notice: '商品情報を変更しました。'
     else
+      flash[:alert] = '商品情報が間違っています。'
       render :edit
     end
   end
@@ -51,8 +53,9 @@ class ItemsController < ApplicationController
   def destroy
     set_item
     if @item.destroy
-      redirect_to items_path
+      redirect_to items_path, notice: '商品を削除しました。'
     else
+      flash[:alert] = '商品削除に失敗しました。'
       render :show
     end
   end
@@ -62,15 +65,16 @@ class ItemsController < ApplicationController
   end
 
   def stock
-    @items = Item.where(stock: 1).order('created_at DESC')
+    @items = Item.where(user_id: current_user, stock: 1).order('created_at DESC')
   end
 
   def stock_out
     @item = Item.find(params[:item_id])
     @item.stock = 0
     if @item.save
-      redirect_to items_path
+      redirect_to items_path, notice: 'ストックから商品を出品しました。'
     else
+      flash[:alert] = 'ストック商品の出品に失敗しました。'
       render :stock
     end
   end
