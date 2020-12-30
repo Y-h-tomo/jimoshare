@@ -7,3 +7,8 @@ section.item-form-wrapper
       span.fas.fa-undo
   .section.item-index
       =render partial:'receipt_item',collection:@receipt_items
+  .hero.is-medium.is-success.is-bold
+    h1.title.form-title
+      |販売済みチケット
+  .section.item-index
+    = render partial:'tickets/used_ticket',collection:@used_tickets
