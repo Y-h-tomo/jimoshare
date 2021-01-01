@@ -19,8 +19,11 @@ section.has-background-light
         h2.subtitle
           |フードロスの削減を地産地消と結びつけたポートフォリオサービスです
 #info-first
-  section.info-wrapper.level
-      .card.top-card
+  section.info-wrapper
+      #card-earth.button
+        span.icon.has-text-warning.is-size-2
+          i.fas.fa-exclamation-triangle
+      #card-earth-show.card.top-card
         .card-image
           .image.info-image
             =image_tag("top-info-earth.png")
@@ -28,7 +31,10 @@ section.has-background-light
             |国連で2015年に採択された持続可能な開発目標「SDGs」は、
             |地球環境の保全と利用、消費と再生のバランスを保つため
             |人と自然が共存するためにも考えなければならない目標になります。
-      .card.top-card
+      #card-loss.button
+        span.icon.has-text-danger.is-size-2
+          i.fas.fa-exclamation-circle
+      #card-loss-show.card.top-card
         .card-image
           .image.info-image
             =image_tag("top-info-loss.png")
@@ -38,7 +44,10 @@ section.has-background-light
             |世界で毎年13億トン、日本だけでも約612万トンの食品廃棄が発生しています。
             |さらに日本では、食品の3分の1ルールなど、賞味期限を気にした業界ルールが存在し、
             |食品廃棄が増えやすい風潮があります。
-      .card.top-card
+      #card-child.button
+        span.icon.has-text-danger.is-size-2
+          i.fas.fa-exclamation-circle
+      #card-child-show.card.top-card
         .card-image
           .image.info-image
             =image_tag("top-info-child.png")
@@ -46,7 +55,8 @@ section.has-background-light
             |一方、2020年7月17日に厚生労働省が発表した「2019年 国民生活基礎調査」の結果では
             |17歳以下の子供の貧困率が13.5％にものぼることが判明し,
             |子供食堂など支援施設への食糧支援が急務となっています。
-      .card.top-card
+      #card-dev.button
+      #card-dev-show.card.top-card
         .card-image
           .image.info-image
             =image_tag("top-info-dev.png")
@@ -71,11 +81,11 @@ section.has-background-light
           |子供食堂、ペットの食費などに困っているユーザーをつなげます
 #info-second
   section.info-second-wrapper.level
-    .card.top-card
+    .card.howto-image
       .card-image
-        .image.info-image
+        .image
             =image_tag("howto.png")
-    .card.top-card.has-background-warning
+    .card.howto-card.has-background-warning
       p
         strong
           |出品ユーザー
@@ -88,7 +98,7 @@ section.has-background-light
         |③出品中の食品に購入者がつくと、商品詳細にチケットが表示されます。
       p
         |④引き取りに来た購入ユーザーの提示した番号を確認し、食品の販売または提供を行い、チケット受け取り処理を行います。
-    .card.top-card.has-background-primary
+    .card.howto-card.has-background-primary
       p
         strong
           |購入ユーザー

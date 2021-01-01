@@ -27,12 +27,14 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     width: 30em;
     padding: 1em;
     margin: 1em;
+    display: none;
 }
 
 .info-wrapper {
     padding: 1em;
-    height: 100vh;
+    height: 80vh;
     display: flex;
+    justify-content: space-around;
     flex-flow: row wrap;
     overflow: scroll;
     background-size: cover;
@@ -42,7 +44,7 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 
 .info-second-wrapper {
     padding: 1em;
-    height: 100vh;
+    height: 70vh;
     overflow: scroll;
     display: flex;
     flex-flow: row wrap;
@@ -57,18 +59,53 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
     background-color: $jimo-bg;
 }
 
-#info-first {
-    display: none;
-}
-
-#info-close {
-    display: none;
-}
-
-#info-second {
-    display: none;
-}
-
+#info-first,
+#info-close,
+#info-second,
 #howto-close {
     display: none;
+}
+
+#card-earth {
+    width: 10em;
+    height: 10em;
+    background-size: cover;
+    background-position: center;
+    background-image: image-url("top-info-earth.png");
+}
+
+#card-loss {
+    width: 10em;
+    height: 10em;
+    background-size: cover;
+    background-position: center;
+    background-image: image-url("top-info-loss.png");
+}
+
+#card-child {
+    width: 10em;
+    height: 10em;
+    background-size: cover;
+    background-position: center;
+    background-image: image-url("top-info-child.png");
+}
+
+#card-dev {
+    width: 10em;
+    height: 10em;
+    background-size: cover;
+    background-position: center;
+    background-image: image-url("top-info-dev.png");
+}
+
+.howto-image {
+    width: 30em;
+    margin: 1em;
+    padding: 0.2em;
+}
+
+.howto-card {
+    width: 30em;
+    padding: 1em;
+    margin: 1em;
 }
