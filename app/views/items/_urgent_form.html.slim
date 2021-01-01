@@ -3,8 +3,6 @@
     .field
       = render 'shared/error_messages', model: f.object
     .field.must-form
-      p.has-text-danger.is-size-5
-        |画像のみ必ず選択し直してください
       .field
         lavel.has-text-white
           |商品名(40文字以内)
@@ -15,6 +13,8 @@
       .field id="image-list"
         = image_tag @item.image.variant(resize: '180x180'), id: 'image' if @item.image.present?
       .field
+        p.has-text-danger.is-size-5
+          |画像のみ必ず選択し直してください
         lavel.has-text-white
           |商品画像
         .control.has-icons-left

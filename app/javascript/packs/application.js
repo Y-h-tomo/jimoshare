@@ -12,7 +12,7 @@ require("jquery");
 require("../search");
 require("../preview");
 require("../back");
-// require("../home");
+require("../home");
 
 import "@fortawesome/fontawesome-free/js/all";
 // Uncomment to copy all static images under ../images to the output folder and reference

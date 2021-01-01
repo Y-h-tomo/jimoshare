@@ -9,88 +9,98 @@ section.hero.previews.top-wrapper.is-medium
           | jimoshare
         h2.main-subtitle
           | フードロスも地産地消へ
-section
+section.has-background-light
+    .container.hero
+      #info-show.button.is-success.is-size-5
+          |  << open here >>
+      .hero-body
+        h1.title
+          | jimoshareとは....
+        h2.subtitle
+          |フードロスの削減を地産地消と結びつけたポートフォリオサービスです
+#info-first
+  section.info-wrapper.level
+      .card.top-card
+        .card-image
+          .image.info-image
+            =image_tag("top-info-earth.png")
+        .card-content.info-content
+            |国連で2015年に採択された持続可能な開発目標「SDGs」は、
+            |地球環境の保全と利用、消費と再生のバランスを保つため
+            |人と自然が共存するためにも考えなければならない目標になります。
+      .card.top-card
+        .card-image
+          .image.info-image
+            =image_tag("top-info-loss.png")
+        .card-content
+            |フードロスは、SDGsを考える上でも深刻な問題の一つとして存在しており、
+            |2020年10月号の農林水産省の記事によると
+            |世界で毎年13億トン、日本だけでも約612万トンの食品廃棄が発生しています。
+            |さらに日本では、食品の3分の1ルールなど、賞味期限を気にした業界ルールが存在し、
+            |食品廃棄が増えやすい風潮があります。
+      .card.top-card
+        .card-image
+          .image.info-image
+            =image_tag("top-info-child.png")
+        .card-content
+            |一方、2020年7月17日に厚生労働省が発表した「2019年 国民生活基礎調査」の結果では
+            |17歳以下の子供の貧困率が13.5％にものぼることが判明し,
+            |子供食堂など支援施設への食糧支援が急務となっています。
+      .card.top-card
+        .card-image
+          .image.info-image
+            =image_tag("top-info-dev.png")
+        .card-content
+            |私は、食品工場長としての経験の中で、実際の食品廃棄の問題に直面し、
+            |さらに子供食堂へ食品の無償提供を行った経験もしてきました。
+            |加えて、田舎特有の食品のお裾分け、食品の作りすぎて余るといった問題にも慣れ親しんでおり、
+            |それらの問題を解決するためのサービスの一つとして、
+            |”フードロスも地産地消へ”をキャッチコピーに
+            |開発に挑戦したポートフォリオサービスです。
+#info-close.button.is-danger.is-size-5
+    |  >>  close here <<
+section.has-background-light
   .container.hero
+    #howto-show.button.is-primary.is-size-5
+        |  << open here >>
     .hero-body
-      h1.title
-        | jimoshareとは....
-      h2.subtitle
-        |フードロスの削減を地産地消と結びつけたポートフォリオサービスです
-section.info-wrapper.level
+        h1.title
+          | jimoshareの使い方
+        h2.subtitle
+          |在庫品や賞味期限が近い食品の処理、収穫物に困っているユーザーと
+          |子供食堂、ペットの食費などに困っているユーザーをつなげます
+#info-second
+  section.info-second-wrapper.level
     .card.top-card
       .card-image
         .image.info-image
-          =image_tag("top-info-earth.png")
-      .card-content.info-content
-          |国連で2015年に採択された持続可能な開発目標「SDGs」は、
-          |地球環境の保全と利用、消費と再生のバランスを保つため
-          |人と自然が共存するためにも考えなければならない目標になります。
-    .card.top-card
-      .card-image
-        .image.info-image
-          =image_tag("top-info-loss.png")
+            =image_tag("howto.png")
+    .card.top-card.has-background-warning
+      p
+        strong
+          |出品ユーザー
       .card-content
-          |フードロスは、SDGsを考える上でも深刻な問題の一つとして存在しており、
-          |2020年10月号の農林水産省の記事によると
-          |世界で毎年13億トン、日本だけでも約612万トンの食品廃棄が発生しています。
-          |さらに日本では、食品の3分の1ルールなど、賞味期限を気にした業界ルールが存在し、
-          |食品廃棄が増えやすい風潮があります。
-    .card.top-card
-      .card-image
-        .image.info-image
-          =image_tag("top-info-child.png")
+      p
+        |①食品の情報を入力し、直接出品か、ストック出品を行います。
+      p
+        |②ストック出品のものは、設定した日にお知らせします。
+      p
+        |③出品中の食品に購入者がつくと、商品詳細にチケットが表示されます。
+      p
+        |④引き取りに来た購入ユーザーの提示した番号を確認し、食品の販売または提供を行い、チケット受け取り処理を行います。
+    .card.top-card.has-background-primary
+      p
+        strong
+          |購入ユーザー
       .card-content
-          |一方、2020年7月17日に厚生労働省が発表した「2019年 国民生活基礎調査」の結果では
-          |17歳以下の子供の貧困率が13.5％にものぼることが判明し,
-          |子供食堂など支援施設への食糧支援が急務となっています。
-    .card.top-card
-      .card-image
-        .image.info-image
-          =image_tag("top-info-dev.png")
-      .card-content
-          |私は、食品工場長としての経験の中で、実際の食品廃棄の問題に直面し、
-          |さらに子供食堂へ食品の無償提供を行った経験もしてきました。
-          |加えて、田舎特有の食品のお裾分け、食品の作りすぎて余るといった問題にも慣れ親しんでおり、
-          |それらの問題を解決するためのサービスの一つとして、
-          |”フードロスも地産地消へ”をキャッチコピーに
-          |開発に挑戦したポートフォリオサービスです。
-section
-  .container.hero
-    .hero-body
-      h1.title
-        | jimoshareの使い方
-      h2.subtitle
-        |在庫品や賞味期限が近い食品の処理、収穫物に困っているユーザーと
-        |子供食堂、ペットの食費などに困っているユーザーをつなげます
-section.info-second-wrapper.level
-  .card.top-card
-    .card-image
-      .image.info-image
-          =image_tag("howto.png")
-  .card.top-card.has-background-warning
-    p
-      strong
-        |出品ユーザー
-    .card-content
-    p
-      |①食品の情報を入力し、直接出品か、ストック出品を行います。
-    p
-      |②ストック出品のものは、設定した日にお知らせします。
-    p
-      |③出品中の食品に購入者がつくと、商品詳細にチケットが表示されます。
-    p
-      |④引き取りに来た購入ユーザーの提示した番号を確認し、食品の販売または提供を行い、チケット受け取り処理を行います。
-  .card.top-card.has-background-primary
-    p
-      strong
-        |購入ユーザー
-    .card-content
-    p
-      |①商品一覧から食品を選択し、購入画面に移ります。
-    p
-      |②購入と同時にチケットが発券され、チケット一覧に表示されます。
-    p
-      |③引き取り期限日までに引き取り場所へ行きます。
-    p
-      |④出品ユーザーにチケットナンバーチェックからナンバーをチェックしてもらい、食品を購入または受け取ります。
+      p
+        |①商品一覧から食品を選択し、購入画面に移ります。
+      p
+        |②購入と同時にチケットが発券され、チケット一覧に表示されます。
+      p
+        |③引き取り期限日までに引き取り場所へ行きます。
+      p
+        |④出品ユーザーにチケットナンバーチェックからナンバーをチェックしてもらい、食品を購入または受け取ります。
+#howto-close.button.is-danger.is-size-5
+    |  >> close here <<
 

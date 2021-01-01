@@ -1,10 +1,15 @@
 section.item-form-wrapper
   .hero.is-medium.is-warning.is-bold.page-title
     h1.title.form-title
-      |前回の出品データで緊急出品
+      |緊急出品
+  .back-icon.level
+    p.button.is-info.is-small
+      |前回データを使用します
+    p.button.is-danger.is-small
+      |画像のみ必ず選択し直してください
   - if @item.nil?
     .container
-      .hero.is-medium.is-danger
+      .hero.is-medium.is-danger.no-date
         h1.title.hero-body
           |前回の出品データが存在しません
   - else

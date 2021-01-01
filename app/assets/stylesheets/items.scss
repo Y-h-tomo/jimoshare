@@ -36,7 +36,7 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 .item-form {
     padding: 30px;
     max-width: 500px;
-    margin: 20px auto;
+    margin: 3.5em auto;
     background-color: $jimo-bg;
 }
 
@@ -130,4 +130,8 @@ $jimo-bg: rgba(0, 0, 0, 0.7);
 .comment-form {
     width: 30em;
     line-height: 3em;
+}
+
+.no-date {
+    margin-top: 5em;
 }
