@@ -13,17 +13,14 @@ class Item < ApplicationRecord
   NGWORD_REGEX = /(.)\1{4,}/.freeze
 
   with_options presence: true do
-    validates :name, length: { maximum: 40 }, format: { without: NGWORD_REGEX, message: 'は5文字以上の繰り返しは禁止です' },
-                     obscenity: { message: 'はNGワードになっています' }
+    with_options format: { without: NGWORD_REGEX, message: 'は5文字以上の繰り返しは禁止です' } do
+      validates :name, length: { maximum: 40 }, obscenity: { message: 'はNGワードになっています' }
+      validates :contact_location, obscenity: { sanitize: true }
+      validates :description, length: { maximum: 200 }, obscenity: { sanitize: true }
+    end
     validates :quantity, numericality: { greater_than: -1, less_than: 100 }
-    validates :description, length: { maximum: 200 },
-                            format: { without: NGWORD_REGEX, message: 'は5文字以上の繰り返しは禁止です' },
-                            obscenity: { sanitize: true }
     validates :deadline
     validates :price, format: { with: /\A[0-9]+\z/ }, numericality: { less_than: 1_000_000 }
-    validates :contact_location,
-              format: { without: NGWORD_REGEX, message: 'は5文字以上の繰り返しは禁止です' },
-              obscenity: { sanitize: true }
     validates :image
   end
   with_options numericality: { other_than: 1 } do
