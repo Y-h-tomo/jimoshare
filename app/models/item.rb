@@ -15,8 +15,8 @@ class Item < ApplicationRecord
   with_options presence: true do
     with_options format: { without: NGWORD_REGEX, message: 'は5文字以上の繰り返しは禁止です' } do
       validates :name, length: { maximum: 40 }, obscenity: { message: 'はNGワードになっています' }
-      validates :contact_location, obscenity: { sanitize: true }
       validates :description, length: { maximum: 200 }, obscenity: { sanitize: true }
+      validates :contact_location, obscenity: { sanitize: true }
     end
     validates :quantity, numericality: { greater_than: -1, less_than: 100 }
     validates :deadline
