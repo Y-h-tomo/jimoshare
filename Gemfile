@@ -84,3 +84,5 @@ gem 'ransack'
 gem 'jquery-rails'
 # 日本語化
 gem 'rails-i18n'
+# NGワード対策
+gem 'obscenity'
